@@ -30,14 +30,14 @@
 /* import fonts */
 @font-face {
   font-family: "Holtwood_One_SC";
-  src: url("fonts/Holtwood_One_SC/HoltwoodOneSC-Regular.woff2") format("woff2");
+  src: url("assets/fonts/Holtwood_One_SC/HoltwoodOneSC-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "lato";
-  src: url("fonts/lato/Lato-Regular.woff2") format("woff2");
+  src: url("assets/fonts/lato/Lato-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 300;
 }
