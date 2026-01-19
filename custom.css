@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+@keyframes animation-loader {
+  0% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(2);
+    transform: scale(1.1);
+  }
+
+  100% {
+    filter: brightness(1);
+  }
+}
+
+.animation {
+  animation: animation-loader 2s ease-in-out infinite;
+}
+
 @font-face {
   font-family: "Holtwood_One_SC";
   src: url("fonts/Holtwood_One_SC/HoltwoodOneSC-Regular.woff2") format("woff2");
