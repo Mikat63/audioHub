@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+:root {
+  --title-font: "Holtwood_One_SC";
+  --main-font: "lato";
+  --green-color: #26bd62;
+}
+
+/* index.php loader animation */
 @keyframes animation-loader {
   0% {
     filter: brightness(1);
@@ -19,6 +26,7 @@
   animation: animation-loader 2s ease-in-out infinite;
 }
 
+/* import fonts */
 @font-face {
   font-family: "Holtwood_One_SC";
   src: url("fonts/Holtwood_One_SC/HoltwoodOneSC-Regular.woff2") format("woff2");
@@ -31,4 +39,23 @@
   src: url("fonts/lato/Lato-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 300;
+}
+
+.font-title {
+  font-family: var(--title-font);
+  font-size: 20px;
+}
+
+.font-main {
+  font-family: var(--main-font);
+  font-size: 16px;
+}
+
+/* colors class */
+.green-color {
+  background-color: var(--green-color);
+}
+
+.hover-green:hover {
+  color: var(--green-color);
 }

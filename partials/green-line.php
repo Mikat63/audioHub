@@ -1,0 +1,1 @@
+<div class="green-color w-full h-0.5"></div>
