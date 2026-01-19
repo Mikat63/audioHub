@@ -1,5 +1,6 @@
 <?php require_once "partials/head.php" ?>
 
+<script defer src="modals.js"></script>
 <title>AudioHub - Connexion</title>
 </head>
 
@@ -27,14 +28,13 @@
                 </div>
 
                 <?php
-                $btnType = "submit";
                 $textBtn = "Connexion";
                 $btnId = "Connexion-btn";
                 require_once "partials/submit-button.php";
                 ?>
             </form>
 
-            <div class="w-full flex justify-end">
+            <div  id="lost-password" class="w-full flex justify-end">
                 <a tabindex=0 class="text-white font-main focus:scale-110 hover-green cursor-pointer">Mot de passe oublié ? </a>
             </div>
 
@@ -45,9 +45,14 @@
             </div>
         </div>
 
-        <dialog>
-            <img src="icons/" alt="image de succès">
-        </dialog>
+
+        <?php
+        require_once "partials/reset-password-modal.php";
+        ?>
+
+        <?php
+        require_once "partials/response-modal.php";
+        ?>
     </main>
 </body>
 

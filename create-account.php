@@ -1,4 +1,5 @@
 <?php require_once "partials/head.php" ?>
+<script defer src="modals.php"></script>
 
 <title>AudioHub - Connexion</title>
 </head>
@@ -38,12 +39,11 @@
                     ?>
 
                     <?php
-                    $textBtn = "Annuler";
                     $btnId = "back-btn";
                     $hrefBtn = "connexion.php";
+                    $textBtn = "Annuler";
                     require_once "partials/button.php";
                     ?>
-
                 </div>
 
             </form>

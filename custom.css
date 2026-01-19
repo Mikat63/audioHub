@@ -4,6 +4,7 @@
   --title-font: "Holtwood_One_SC";
   --main-font: "lato";
   --green-color: #26bd62;
+  --grey-color: #1a191b;
 }
 
 /* index.php loader animation */
@@ -44,6 +45,7 @@
 .font-title {
   font-family: var(--title-font);
   font-size: 20px;
+  color: white;
 }
 
 .font-main {
@@ -54,6 +56,10 @@
 /* colors class */
 .green-color {
   background-color: var(--green-color);
+}
+
+.grey-color {
+  background-color: var(--grey-color);
 }
 
 .hover-green:hover {
