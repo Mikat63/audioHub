@@ -2,6 +2,8 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json; charset=utf-8');
 
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $json = file_get_contents('php://input');
@@ -60,7 +62,7 @@ if (!preg_match('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}
 if (strlen($data['pseudo']) < 5 || strlen($data['pseudo']) > 20) {
     echo json_encode([
         'status' => 'pseudo-error',
-        'message' => 'Le pseudo doit être compris entre 5 et 20 caractères'
+        'message' => 'Le pseudo doit être compris entre 5 et 2rror0 caractères'
     ]);
     exit();
 };
@@ -75,13 +77,12 @@ if (strlen($data['password']) < 8 || strlen($data['password']) > 20) {
 
 $pseudo = htmlspecialchars(strip_tags($data['pseudo']));
 $email = htmlspecialchars(strip_tags($data['email']));
-$password = password_hash($data['password'], PASSWORD_DEFAULT);
+$passwordUser = password_hash($data['password'], PASSWORD_DEFAULT);
 
 try {
     require_once "../utils/db_connect.php";
-
     // verify if username exist
-        $request = $db->prepare('SELECT 
+    $request = $db->prepare('SELECT 
                         username
                        FROM 
                         users
@@ -94,6 +95,7 @@ try {
     $user = $request->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
+        // Removed debug logs
         echo json_encode([
             'status' => 'error-pseudo-exist',
             'message' => 'Ce pseudo est déjà utilisé'
@@ -102,12 +104,12 @@ try {
     }
 
     // verify if email exist
-        $request = $db->prepare('SELECT 
+    $request = $db->prepare('SELECT 
                         email
                        FROM 
                         users
                        WHERE 
-                        email = :pseudo');
+                        email = :email');
     $request->execute([
         'email' => $email
     ]);
@@ -115,6 +117,7 @@ try {
     $user = $request->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
+        // Removed debug logs
         echo json_encode([
             'status' => 'error-email-exist',
             'message' => 'Cette adresse email est déjà utilisée'
@@ -123,6 +126,7 @@ try {
     }
 
     // verify if email and pseudo exist in same account
+
     $request = $db->prepare('SELECT 
                         username,
                         email
@@ -138,6 +142,7 @@ try {
     $user = $request->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
+        // Removed debug logs
         echo json_encode([
             'status' => 'error-account-exist',
             'message' => 'Un compte existe déjà'
@@ -145,6 +150,10 @@ try {
         exit();
     }
 
+    // create user
+
+
+    // Removed debug logs
     $request = $db->prepare("INSERT INTO 
                                 users (username,email,password,role,created_at)
                                 VALUES(:pseudo,:email,:password,:role,:createDate)");
@@ -152,20 +161,22 @@ try {
     $request->execute([
         'pseudo' => $pseudo,
         'email' => $email,
-        'password' => $password,
+        'password' => $passwordUser,
         'role' => "user",
         'createDate' => (new DateTime())->format('Y-m-d H:i:s')
     ]);
 
+    // Removed debug logs
     echo json_encode([
         'status' => 'success',
         'message' => 'Ton compte est créé' . $pseudo . " Bienvenue !"
     ]);
     exit();
 } catch (PDOException $error) {
+    // Removed debug logs
     echo json_encode([
         'status' => 'error_server',
         'message' => "Une erreur s'est produite"
     ]);
     exit();
-};
+}

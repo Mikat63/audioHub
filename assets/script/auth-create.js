@@ -88,7 +88,7 @@ function createAccountForm(form) {
         console.error("Erreur réseau :", error);
         showResponseModal(
           "assets/icons/failed-icon.png",
-          "La création du compte n'a pas aboutie",
+          "La création du compte a échoué",
           "red-color",
         );
       });
