@@ -5,7 +5,7 @@
   --main-font: "lato";
   --green-color: #26bd62;
   --grey-color: #1a191b;
-  --red-color: #f31212;
+  --red-color: #FF1A1A;
 }
 
 /* index.php loader animation */
@@ -74,6 +74,10 @@
 
 .red-color {
   color: var(--red-color);
+}
+
+.green-color-text {
+  color: var(--green-color);
 }
 
 .red-bg {

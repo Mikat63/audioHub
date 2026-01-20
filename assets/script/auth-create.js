@@ -10,17 +10,20 @@ const responseText = document.querySelector("#response-text");
 // functions
 
 // functions for show modals with validate status or failed
-function showResponseModal(imgSrc, message) {
+function showResponseModal(imgSrc, message, addColorText) {
   responseModal.classList.toggle("hidden");
   imgResponse.src = imgSrc;
+  responseText.classList.remove("red-color", "green-color-text");
+  responseText.classList.add(addColorText);
   responseText.textContent = message;
   setTimeout(() => {
     responseModal.classList.toggle("hidden");
-  }, 3000);
+  }, 2000);
 }
 
 // function for show error message in the good p
 function errorMessage(data) {
+  console.log(data);
   pseudoError.textContent = "";
   emailError.textContent = "";
   passwordError.textContent = "";
@@ -38,7 +41,25 @@ function errorMessage(data) {
   }
 
   if (data.status === "success") {
-    showResponseModal("icons/success-icon.png", "Compte créé avec succès");
+    showResponseModal(
+      "assets/icons/success-icon.png",
+      data.message,
+      "green-color-text",
+    );
+  }
+
+  if (
+    data.status === "error-method" ||
+    data.status === "error-server" ||
+    data.status === "error-account-exist" ||
+    data.status === "error-pseudo-exist" ||
+    data.status === "error-email-exist"
+  ) {
+    showResponseModal(
+      "assets/icons/failed-icon.png",
+      data.message,
+      "red-color",
+    );
   }
 }
 
@@ -66,8 +87,9 @@ function createAccountForm(form) {
       .catch((error) => {
         console.error("Erreur réseau :", error);
         showResponseModal(
-          "icons/failed-icon.png",
-          "La création du compte n'a pas abouti",
+          "assets/icons/failed-icon.png",
+          "La création du compte n'a pas aboutie",
+          "red-color",
         );
       });
   });

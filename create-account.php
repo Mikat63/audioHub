@@ -1,5 +1,5 @@
 <?php require_once "partials/head.php" ?>
-<script defer src="assets/script/auth-create.php"></script>
+<script defer src="assets/script/auth-create.js"></script>
 
 <title>AudioHub - Connexion</title>
 </head>
@@ -14,21 +14,21 @@
             <form id="form-create-account" action="" method="POST" class=" w-[70%] flex flex-col gap-4 ">
                 <div class="font-main flex flex-col sm:flex-row sm:justify-between lg:[50%]">
                     <label class=" text-white text-[16px]" for="pseudo">Pseudo <span class="red-color">*</span></label>
-                    <input class="font-main text-black bg-white focus:scale-110" type="text" id="pseudo" name="pseudo" minlength="10" maxlength="35" placeholder="Entre ton email" require>
+                    <input class="font-main text-black bg-white focus:scale-110 rounded-lg" type="text" id="pseudo" name="pseudo" minlength="5" maxlength="20" placeholder="Entre ton pseudo" required autocomplete="pseudo">
                 </div>
                 <p id="pseudo-error" class='red-color font-main'></p>
 
 
                 <div class="font-main flex flex-col sm:flex-row sm:justify-between lg:[50%]">
                     <label class=" text-white text-[16px]" for="email">Email <span class="red-color">*</span></label>
-                    <input class="font-main text-black bg-white focus:scale-110" type="text" id="email" name="email" minlength="10" maxlength="35" placeholder="Entre ton email" require>
+                    <input class="font-main text-black bg-white focus:scale-110 rounded-lg" type="text" id="email" name="email" minlength="10" maxlength="20" placeholder="Entre ton email" required autocomplete="email">
                 </div>
                 <p id="email-error" class='red-color font-main'></p>
 
 
                 <div class="font-main flex flex-col sm:flex-row sm:justify-between lg:[50%]">
                     <label class=" text-white text-[16px]" for="password">Mot de passe <span class="red-color">*</span> </label>
-                    <input class="font-main text-black bg-white focus:scale-110" type="password" id="password" name="password" minlength="8" maxlength="35" placeholder="Entre ton mot de passe " require>
+                    <input class="font-main text-black bg-white focus:scale-110 rounded-lg" type="password" id="password" name="password" minlength="8" maxlength="20" placeholder="Entre ton mot de passe " required autocomplete="current-password">
                 </div>
                 <p id="password-error" class='red-color font-main'></p>
 
