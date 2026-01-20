@@ -1,5 +1,5 @@
 <?php require_once "partials/head.php" ?>
-<script defer src="assets/script/modals.php"></script>
+<script defer src="assets/script/auth-create.php"></script>
 
 <title>AudioHub - Connexion</title>
 </head>
@@ -13,20 +13,25 @@
 
             <form id="form-create-account" action="" method="POST" class=" w-[70%] flex flex-col gap-4 ">
                 <div class="font-main flex flex-col sm:flex-row sm:justify-between lg:[50%]">
-                    <label class=" text-white text-[16px]" for="pseudo">Pseudo</label>
+                    <label class=" text-white text-[16px]" for="pseudo">Pseudo <span class="red-color">*</span></label>
                     <input class="font-main text-black bg-white focus:scale-110" type="text" id="pseudo" name="pseudo" minlength="10" maxlength="35" placeholder="Entre ton email" require>
                 </div>
+                <p id="pseudo-error" class='red-color font-main'></p>
 
 
                 <div class="font-main flex flex-col sm:flex-row sm:justify-between lg:[50%]">
-                    <label class=" text-white text-[16px]" for="email">Email</label>
+                    <label class=" text-white text-[16px]" for="email">Email <span class="red-color">*</span></label>
                     <input class="font-main text-black bg-white focus:scale-110" type="text" id="email" name="email" minlength="10" maxlength="35" placeholder="Entre ton email" require>
                 </div>
+                <p id="email-error" class='red-color font-main'></p>
+
 
                 <div class="font-main flex flex-col sm:flex-row sm:justify-between lg:[50%]">
-                    <label class=" text-white text-[16px]" for="password">Mot de passe</label>
+                    <label class=" text-white text-[16px]" for="password">Mot de passe <span class="red-color">*</span> </label>
                     <input class="font-main text-black bg-white focus:scale-110" type="password" id="password" name="password" minlength="8" maxlength="35" placeholder="Entre ton mot de passe " require>
                 </div>
+                <p id="password-error" class='red-color font-main'></p>
+
 
                 <?php require_once "partials/green-line.php"; ?>
 
@@ -45,8 +50,11 @@
                     require_once "partials/button.php";
                     ?>
                 </div>
-
             </form>
+
+            <?php
+            require_once "partials/response-modal.php";
+            ?>
         </div>
     </main>
 </body>

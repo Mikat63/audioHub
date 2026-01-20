@@ -1,7 +1,8 @@
-const responseModal = document.querySelector("#response-modal");
+const LostPassword = document.querySelector("#lost-password");
 const resetModal = document.querySelector("#reset-modal");
 const backBtn = document.querySelector("#back-btn");
-const LostPassword = document.querySelector("#lost-password");
+const responseModal = document.querySelector("#response-modal");
+
 
 function openClosedModal(modalId, e) {
   e?.stopPropagation();

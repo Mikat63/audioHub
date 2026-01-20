@@ -5,6 +5,7 @@
   --main-font: "lato";
   --green-color: #26bd62;
   --grey-color: #1a191b;
+  --red-color: #f31212;
 }
 
 /* index.php loader animation */
@@ -30,7 +31,8 @@
 /* import fonts */
 @font-face {
   font-family: "Holtwood_One_SC";
-  src: url("assets/fonts/Holtwood_One_SC/HoltwoodOneSC-Regular.woff2") format("woff2");
+  src: url("assets/fonts/Holtwood_One_SC/HoltwoodOneSC-Regular.woff2")
+    format("woff2");
   font-style: normal;
   font-weight: 400;
 }
@@ -64,4 +66,16 @@
 
 .hover-green:hover {
   color: var(--green-color);
+}
+
+.focus-green:focus {
+  color: var(--green-color);
+}
+
+.red-color {
+  color: var(--red-color);
+}
+
+.red-bg {
+  background-color: var(--red-color);
 }

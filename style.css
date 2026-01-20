@@ -371,6 +371,7 @@
   --main-font: "lato";
   --green-color: #26bd62;
   --grey-color: #1a191b;
+  --red-color: #f31212;
 }
 @keyframes animation-loader {
   0% {
@@ -416,6 +417,15 @@
 }
 .hover-green:hover {
   color: var(--green-color);
+}
+.focus-green:focus {
+  color: var(--green-color);
+}
+.red-color {
+  color: var(--red-color);
+}
+.red-bg {
+  background-color: var(--red-color);
 }
 @property --tw-translate-x {
   syntax: "*";
