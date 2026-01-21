@@ -5,7 +5,7 @@ const backBtn = document.querySelector("#back-btn");
 const responseModal = document.querySelector("#response-modal");
 
 const formConnexionUser = document.querySelector("#form-connexion-user");
-const pseudoError = document.querySelector("#pseudo-error");
+const passwordError = document.querySelector("#password-error");
 const emailError = document.querySelector("#email-error");
 const imgResponse = document.querySelector("#img-response");
 const responseText = document.querySelector("#response-text");
@@ -26,7 +26,6 @@ function showResponseModal(imgSrc, message, addColorText) {
 
 // function for show error message in the good p
 function errorMessage(data) {
-  console.log(data);
   pseudoError.textContent = "";
   emailError.textContent = "";
 
