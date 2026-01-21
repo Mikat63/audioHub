@@ -37,8 +37,8 @@
                 ?>
             </form>
 
-            <div id="lost-password" class="w-full flex justify-end">
-                <a tabindex=0 class="text-white font-main focus:scale-110 hover-green focus-green cursor-pointer">Mot de passe oublié ? </a>
+            <div class="w-full flex justify-end">
+                <a id="lost-password" tabindex=0 class="text-white font-main focus:scale-110 hover-green focus-green cursor-pointer">Mot de passe oublié ? </a>
             </div>
 
             <?php require_once "partials/green-line.php"; ?>

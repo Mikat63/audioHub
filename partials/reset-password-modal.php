@@ -3,7 +3,7 @@
               <h2 class="font-title"> Entrez votre adresse mail</h2>
 
               <div class="font-main flex flex-col items-center">
-                  <input class="font-main text-black  bg-white focus:scale-110" type="text" id="email" name="email" minlength="10" maxlength="35" placeholder="Entre ton email" require>
+                  <input class="font-main text-black  bg-white focus:scale-110" type="text" id="reset-email" name="email" minlength="10" maxlength="35" placeholder="Entre ton email" require>
               </div>
 
               <div class="flex flex-row justify-center gap-6 ">

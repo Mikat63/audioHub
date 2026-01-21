@@ -26,30 +26,27 @@ function showResponseModal(imgSrc, message, addColorText) {
 
 // function for show error message in the good p
 function errorMessage(data) {
-  pseudoError.textContent = "";
   emailError.textContent = "";
-
-  if (data.status === "pseudo-error") {
-    pseudoError.textContent = data.message;
-  }
+  passwordError.textContent = "";
 
   if (data.status === "email-error") {
     emailError.textContent = data.message;
   }
 
-  if (data.status === "success") {
-    showResponseModal(
-      "assets/icons/success-icon.png",
-      data.message,
-      "green-color-text",
-    );
+  if (data.status === "bad-password") {
+    passwordError.textContent = data.message;
+  }
+
+  if (data.status === "ok") {
+    window.location.href = "home.php";
   }
 
   if (
     data.status === "error-method" ||
     data.status === "error-server" ||
     data.status === "error-pseudo-exist" ||
-    data.status === "error-email-exist"
+    data.status === "error-email-exist" ||
+    data.status === "no-account"
   ) {
     showResponseModal(
       "assets/icons/failed-icon.png",
@@ -60,17 +57,16 @@ function errorMessage(data) {
 }
 
 // function to fetch in process
-function formConnexionUser(form) {
+function formConnexion(form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const pseudoValue = form.querySelector("#pseudo").value;
     const emailValue = form.querySelector("#email").value;
+    const passwordValue = form.querySelector("#password").value;
 
     fetch("process/connexion-auth.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        pseudo: pseudoValue,
         email: emailValue,
         password: passwordValue,
       }),
@@ -83,15 +79,14 @@ function formConnexionUser(form) {
         console.error("Erreur réseau :", error);
         showResponseModal(
           "assets/icons/failed-icon.png",
-          "La création du compte n'a pas aboutie",
+          "Une erreur s'est produite",
           "red-color",
         );
       });
   });
 }
 
-createAccountForm(formCreateAccount);
-
+formConnexion(formConnexionUser);
 
 // reset modal
 function openClosedModal(modalId, e) {
