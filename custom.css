@@ -5,7 +5,8 @@
   --main-font: "lato";
   --green-color: #26bd62;
   --grey-color: #1a191b;
-  --red-color: #FF1A1A;
+  --red-color: #ff1a1a;
+  --footer-grey-bg: #1b1919;
 }
 
 /* index.php loader animation */
@@ -64,6 +65,10 @@
   background-color: var(--grey-color);
 }
 
+.footer-grey-bg {
+  background-color: var(--footer-grey-bg);
+}
+
 .hover-green:hover {
   color: var(--green-color);
 }
@@ -78,6 +83,14 @@
 
 .green-color-text {
   color: var(--green-color);
+}
+
+.green-color-border-bottom {
+  border-bottom: 2px solid var(--green-color);
+}
+
+.green-color-border-top {
+  border-top: 2px solid var(--green-color);
 }
 
 .red-bg {

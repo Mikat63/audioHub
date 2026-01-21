@@ -1,7 +1,7 @@
 <?php require_once "partials/head.php" ?>
 <script defer src="assets/script/auth-create.js"></script>
 
-<title>AudioHub - Connexion</title>
+<title>AudioHub - Créer un compte</title>
 </head>
 
 <body class="bg-black h-svh max-h-svh flex flex-col">

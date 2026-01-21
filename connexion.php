@@ -26,8 +26,8 @@
 
 
                 <div>
-                    <input class=" bg-white focus:scale-110" type="checkbox" id="remember_me" name="remember_me">
-                    <label for="remember_me" class="text-white font-main cursor-pointer hover-green hover:brightness-150 focus:brightness-80 focus:scale-110">Se souvenir de moi</label>
+                    <input class=" bg-white focus:scale-110" type="checkbox" id="remember-me" name="remember-me">
+                    <label for="remember-me" class="text-white font-main cursor-pointer hover-green hover:brightness-150 focus:brightness-80 focus:scale-110">Se souvenir de moi</label>
                 </div>
 
                 <?php

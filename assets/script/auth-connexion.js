@@ -62,6 +62,7 @@ function formConnexion(form) {
     e.preventDefault();
     const emailValue = form.querySelector("#email").value;
     const passwordValue = form.querySelector("#password").value;
+    const rememberMe = form.querySelector("#remember-me").checked ? true : false;
 
     fetch("process/connexion-auth.php", {
       method: "POST",
@@ -69,6 +70,7 @@ function formConnexion(form) {
       body: JSON.stringify({
         email: emailValue,
         password: passwordValue,
+        remember_me: rememberMe,
       }),
     })
       .then((response) => response.json())

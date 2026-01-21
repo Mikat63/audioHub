@@ -64,8 +64,37 @@ try {
     }
 
     if (password_verify($passwordUser, $user['password'])) {
-        $_SESSION['id'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
+        if (isset($data['remember_me']) && $data['remember_me'] == true) {
+            // Génère un token aléatoire
+            $token = bin2hex(random_bytes(32));
+            $tokenHash = password_hash($token, PASSWORD_DEFAULT);
+
+            // stocker en bdd le token hashé
+            $request = $db->prepare('INSERT INTO remember_tokens (user_id, token_hash, expires_at)
+                                    VALUES (:user_id, :token_hash, :expires_at)');
+            $request->execute([
+                'user_id' => $user['id'],
+                'token_hash' => $tokenHash,
+                'expires_at' => date('Y-m-d H:i:s', time() + 14 * 24 * 3600)
+            ]);
+
+            // Création du cookie
+            setcookie(
+                'remember_me',
+                $token,
+                [
+                    'expires' => time() + 3600 * 24 * 7,
+                    'httponly' => true,
+                    'path' => '/',
+                    'samesite' => 'Strict',
+                    // 'secure' => true accepte le cookie uniquement en HTTPs
+                ]
+            );
+        };
+
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_username'] = $user['username'];
+
         echo json_encode([
             'status' => 'ok',
             'message' => 'is-connected'
