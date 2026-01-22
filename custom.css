@@ -4,6 +4,7 @@
   --title-font: "Holtwood_One_SC";
   --main-font: "lato";
   --green-color: #26bd62;
+  --green-bg: #4b8161;
   --grey-color: #1a191b;
   --red-color: #ff1a1a;
   --footer-grey-bg: #1b1919;
@@ -56,9 +57,19 @@
   font-size: 16px;
 }
 
+.font-int-stats {
+  font-family: var(--main-font);
+  font-size: 20px;
+  color: var(--green-color);
+}
+
 /* colors class */
 .green-color {
   background-color: var(--green-color);
+}
+
+.green-text {
+  color: var(--green-color);
 }
 
 .grey-color {
@@ -111,4 +122,12 @@
 
 .red-bg {
   background-color: var(--red-color);
+}
+
+.linear-black-green {
+  background: linear-gradient(to bottom, #000000 0%, var(--green-bg) 100%);
+}
+
+.green-border {
+  border: 2px solid rgba(38, 189, 98, 0.2); /* --green-color avec 50% d'opacité */
 }

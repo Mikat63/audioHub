@@ -19,7 +19,7 @@
               </a>
           </div>
 
-          <div id="sidebar-btn" tabindex="0" aria-label="Ouvrir le menu" title="Menu" class="w-8 h-8 hidden sm:block">
+          <div id="sidebar-btn" tabindex="0" role="button" title="Menu" class="w-8 h-8 hidden sm:block">
               <img class="w-full h-full flex flex-col items-center hover:scale-125 focus:scale-125 cursor-pointer" src="assets/icons/menu-icon.png" alt="Aller vers facebook">
           </div>
       </div>

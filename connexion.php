@@ -30,11 +30,13 @@
                     <label for="remember-me" class="text-white font-main cursor-pointer hover-green hover:brightness-150 focus:brightness-80 focus:scale-110">Se souvenir de moi</label>
                 </div>
 
-                <?php
-                $textBtn = "Connexion";
-                $btnId = "Connexion-btn";
-                require_once "partials/submit-button.php";
-                ?>
+                <div class=" flex justify-center">
+                    <?php
+                    $textBtn = "Connexion";
+                    $btnId = "Connexion-btn";
+                    require_once "partials/submit-button.php";
+                    ?>
+                </div>
             </form>
 
             <div class="w-full flex justify-end">

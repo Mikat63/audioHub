@@ -10,7 +10,7 @@ const responseText = document.querySelector("#response-text");
 // functions
 
 // functions for show modals with validate status or failed
-function showResponseModal(imgSrc, message, addColorText) {
+function showResponseModal(imgSrc, imgAlt, message, addColorText) {
   responseModal.classList.toggle("hidden");
   imgResponse.src = imgSrc;
   responseText.classList.remove("red-color", "green-color-text");
@@ -43,6 +43,7 @@ function errorMessage(data) {
   if (data.status === "success") {
     showResponseModal(
       "assets/icons/success-icon.png",
+      "Icone de succès",
       data.message,
       "green-color-text",
     );
@@ -57,6 +58,7 @@ function errorMessage(data) {
   ) {
     showResponseModal(
       "assets/icons/failed-icon.png",
+      "Icone d'erreur",
       data.message,
       "red-color",
     );
@@ -88,6 +90,7 @@ function createAccountForm(form) {
         console.error("Erreur réseau :", error);
         showResponseModal(
           "assets/icons/failed-icon.png",
+          "Icone d'erreur",
           "La création du compte a échoué",
           "red-color",
         );

@@ -13,9 +13,10 @@ const responseText = document.querySelector("#response-text");
 // functions
 
 // functions for show modals with validate status or failed
-function showResponseModal(imgSrc, message, addColorText) {
+function showResponseModal(imgSrc,imgAlt, message, addColorText) {
   responseModal.classList.toggle("hidden");
   imgResponse.src = imgSrc;
+  imgResponse.alt = imgAlt;
   responseText.classList.remove("red-color", "green-color-text");
   responseText.classList.add(addColorText);
   responseText.textContent = message;
@@ -50,6 +51,7 @@ function errorMessage(data) {
   ) {
     showResponseModal(
       "assets/icons/failed-icon.png",
+      "Icone d'erreur",
       data.message,
       "red-color",
     );
@@ -81,6 +83,7 @@ function formConnexion(form) {
         console.error("Erreur réseau :", error);
         showResponseModal(
           "assets/icons/failed-icon.png",
+          "Icone d'erreur",
           "Une erreur s'est produite",
           "red-color",
         );
