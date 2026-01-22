@@ -34,6 +34,8 @@
                     <?php
                     $textBtn = "Connexion";
                     $btnId = "Connexion-btn";
+                    $ariaLabel = "Bouton connexion";
+                    $title ="Connexion";
                     require_once "partials/submit-button.php";
                     ?>
                 </div>

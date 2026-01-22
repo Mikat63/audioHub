@@ -1,6 +1,6 @@
-<a id="<?= $btnId ?>" href="<?= $hrefBtn ?>" class="w-32 h-auto flex flex-col items-center hover:brightness-150 hover-green-color focus:brightness-150 focus:green-color focus:scale-110 hover:scale-110">
+<a aria-label=<?= $ariaLabel ?> title=<?= $title ?> id="<?= $btnId ?>" href="<?= $hrefBtn ?>" class="w-32 h-auto flex flex-col items-center hover:brightness-150 hover-green-color focus:brightness-150 focus:green-color focus:scale-110 hover:scale-110">
     <div class="w-32 h-8  text-black font-main font-semibold green-color cursor-pointer px-4 flex items-center rounded-md gap-2 sm:w-32 sm:h-10">
-        <img src="assets/icons/icon-contact.png" alt="">
+        <img class="w-4 h-auto" src=<?= $imgBtnSrc ?> alt=<?= $imgBtnSrcAlt ?>>
         <?= $textBtn  ?>
     </div>
 </a>

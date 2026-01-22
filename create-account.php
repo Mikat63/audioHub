@@ -40,6 +40,8 @@
                     $btnType = "submit";
                     $textBtn = "Créer";
                     $btnId = "create-account-btn";
+                    $ariaLabel = "Bouton créer un compte";
+                    $title ="Créer";
                     require_once "partials/submit-button.php";
                     ?>
 
@@ -47,6 +49,8 @@
                     $btnId = "back-btn";
                     $hrefBtn = "connexion.php";
                     $textBtn = "Annuler";
+                    $ariaLabel = " bouton annuler création";
+                    $title ="Annuler";
                     require_once "partials/button.php";
                     ?>
                 </div>

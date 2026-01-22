@@ -7,19 +7,19 @@
       </a>
 
       <div class="social-container w-auto h-auto flex flex-row gap-2 items-center">
-          <div title="Aller sur Facebook" class="w-6 h-6 sm:hidden ">
+          <div aria-label="Aller sur Facebook" title="Facebook" class="w-6 h-6 sm:hidden ">
               <a class="block w-full h-full hover:scale-125 focus:scale-125 transition-transform cursor-pointer " target="_blank" href="https://www.facebook.com/?locale=fr_FR">
                   <img class=" w-full h-full flex flex-col items-center " src="assets/icons/facebook.png" alt="Aller vers Instagram">
               </a>
           </div>
 
-          <div title="Aller sur Instagram" class="w-6 h-6 sm:hidden">
+          <div title="Instagram" aria-label="Aller sur Instagram" class="w-6 h-6 sm:hidden">
               <a class="block w-full h-full hover:scale-125 focus:scale-125 transition-transform cursor-pointer" target="_blank" href="https://www.instagram.com/">
                   <img class="w-full h-full flex flex-col items-center" src="assets/icons/instagram.png" alt="Aller vers facebook">
               </a>
           </div>
 
-          <div id="sidebar-btn" tabindex="0" role="button" title="Menu" class="w-8 h-8 hidden sm:block">
+          <div title="menu" aria-label="Bouton pour ouvrir le menu déroulant" id="sidebar-btn" tabindex="0" role="button" title="Menu" class="w-8 h-8 hidden sm:block">
               <img class="w-full h-full flex flex-col items-center hover:scale-125 focus:scale-125 cursor-pointer" src="assets/icons/menu-icon.png" alt="Aller vers facebook">
           </div>
       </div>

@@ -10,6 +10,8 @@
                   <?php
                     $btnId = "reset-password";
                     $textBtn = "Réinitialiser";
+                    $ariaLabel = "Bouton de réinitialisation";
+                    $title ="réinitialiser";
                     require_once "submit-button.php";
                     ?>
 
@@ -17,6 +19,8 @@
                     $textBtn = "Annuler";
                     $btnId = "back-btn";
                     $hrefBtn = "#";
+                    $ariaLabel = "Bouton annuler création du compte";
+                    $title ="annuler";
                     require_once "button.php";
                     ?>
               </div>
