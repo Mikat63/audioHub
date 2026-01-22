@@ -84,7 +84,7 @@
                 <section class="flex flex-col gap-4">
                     <h2 class="font-title text-white">Top 10 : </h2>
 
-                    <div class="tracks-container w-full h-auto flex flex-col gap-2 py-4">
+                    <div class="tracks-container w-full h-auto flex flex-col items-center justify-center gap-2 py-4 sm:w-[70%] mx-auto">
                         <?php
                         foreach ($tracksCharts as $key => $tracksChart) {
                             $numberPosition = $key;
