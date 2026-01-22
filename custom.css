@@ -1,7 +1,3 @@
-/* Focus parent sur enfant (pour accessibilité menu) */
-a:focus .focus-green-child {
-  color: var(--green-color);
-}
 @import "tailwindcss";
 
 :root {
@@ -81,8 +77,20 @@ a:focus .focus-green-child {
   color: var(--green-color);
 }
 
-.focus-green:focus {
+.group:hover .hover-green {
   color: var(--green-color);
+}
+
+.group:hover .hover-fill-green {
+  fill: var(--green-color);
+}
+
+.group:focus .hover-green {
+  color: var(--green-color);
+}
+
+.group:focus .hover-fill-green {
+  fill: var(--green-color);
 }
 
 .red-color {

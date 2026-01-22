@@ -3,31 +3,31 @@
 
         <a aria-label="Revenir à l'accueil" href="home.php">
             <div class="flex flex-col items-center focus:scale-110 hover:scale-110 transition-transform focus-green-child">
-                <img class="w-8 h-auto hover-green" src="assets/icons/home-icon.png" alt="Aller à l'accueil">
+                <img class="w-8 h-auto" src="assets/icons/home-icon.svg" alt="Aller à l'accueil">
             </div>
         </a>
 
         <a aria-label="Chercher une track" href="search.php">
             <div class="flex flex-col items-center focus:scale-110 hover:scale-110 transition-transform focus-green-child">
-                <img class="w-8 h-auto hover-green" src="assets/icons/search-icon.png" alt="Chercher une track">
+                <img class="w-8 h-auto" src="assets/icons/search-icon.svg" alt="Chercher une track">
             </div>
         </a>
 
         <a aria-label="Importer une track" href="import-track.php">
             <div class="flex flex-col items-center focus:scale-110 hover:scale-110 transition-transform focus-green-child">
-                <img class="w-12 h-auto hover-green" src="assets/icons/import-icon.png" alt="Importer une track">
+                <img class="w-12 h-auto" src="assets/icons/import-icon.svg" alt="Importer une track">
             </div>
         </a>
 
         <a aria-label="Consulter ta librairie" href="library.php">
             <div class="flex flex-col items-center focus:scale-110 hover:scale-110 transition-transform focus-green-child">
-                <img class="w-8 h-auto hover-green" src="assets/icons/library-icon.png" alt="Consulter ta librairie">
+                <img class="w-8 h-auto" src="assets/icons/library-icon.svg" alt="Consulter ta librairie">
             </div>
         </a>
 
         <a aria-label="Aller au paramètres" href="settings.php">
             <div class="flex flex-col items-center focus:scale-110 hover:scale-110 transition-transform focus-green-child">
-                <img class="w-8 h-auto hover-green" src="assets/icons/settings-icon.png" alt="Aller au paramètres">
+                <img class="w-8 h-auto" src="assets/icons/setting-icon.svg" alt="Aller au paramètres">
             </div>
         </a>
     </nav>
