@@ -1,4 +1,4 @@
-<div tabindex="0" class="flex flex-row items-center gap-2 w-full">
+<div tabindex="0" class="flex flex-row items-center gap-6 w-full sm:w-[80%] md:w-[70%] xl:w-[60%]">
     <!-- number position -->
     <p aria-label="Numéro <?= $numberPosition ?>" class="font-main green-text w-6 text-right shrink-0"><?= $numberPosition + 1  ?></p>
 
@@ -9,7 +9,7 @@
 
     <!-- title and artist infos -->
     <div class="flex flex-col flex-1 min-w-0">
-        <p aria-label="Titre" class="font-main text-white truncate"><?= $title ?></p>
+        <p aria-label="Titre" class="font-main text-white wrap-break-word leading-tight"><?= $title ?></p>
         <p aria-label="Artiste" class="font-main text-white truncate"><?= $artist ?></p>
     </div>
 

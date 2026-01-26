@@ -52,7 +52,7 @@
 
 
         <main class="w-full flex-1 flex flex-col items-center">
-            <div class="w-[80%] flex flex-col  gap-4 p-2 sm:w-[70%] lg:w-[50%]">
+            <div class="w-[90%] flex flex-col  gap-4 p-2 sm:w-[70%] lg:w-[50%]">
                 <section class="w-full h-auto linear-black-green p-4 flex flex-col gap-4 ">
                     <h2 class="font-title text-white">Bienvenue sur <span class="green-text">AudioHub</span></h2>
                     <p class="text-white font-main">Découvrez et écoutez vos artistes préférés en toute simplicité</p>
@@ -81,17 +81,17 @@
                     </div>
                 </section>
 
-                <section class="flex flex-col gap-4">
+                <section class="w-auto flex flex-col gap-4">
                     <h2 class="font-title text-white">Top 10 : </h2>
 
-                    <div class="tracks-container w-full h-auto flex flex-col items-center justify-center gap-2 py-4 sm:w-[70%] mx-auto">
+                    <div class="tracks-container w-full flex flex-col items-center justify-center gap-2 py-4">
                         <?php
                         foreach ($tracksCharts as $key => $tracksChart) {
                             $numberPosition = $key;
                             $coverSrc = $tracksChart['img_path_small'];
                             $title = $tracksChart['title'];
                             $artist = $tracksChart['name'];
-                            require "partials/track-card-chart";
+                            require "partials/track-card-chart.php";
                         };
                         ?>
                     </div>
@@ -99,7 +99,7 @@
 
             </div>
 
-
+            <?php require_once "partials/sidebar.php"; ?>
         </main>
 
         <?php
