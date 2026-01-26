@@ -8,7 +8,7 @@
     <?php require_once "partials/header-logo.php" ?>
 
     <main class="w-full flex-1 flex flex-col items-center justify-center">
-        <div class="w-full flex flex-col items-center justify-center gap-4 px-2 sm:w-[70%] lg:w-[50%]">
+        <div class="w-full flex flex-col items-center justify-center gap-4 px-2 pb-25 sm:w-[70%] lg:w-[50%]">
             <h1 class=" font-title text-white text-[20px]">Crée ton compte</h1>
 
             <form id="form-create-account" action="" method="POST" class=" w-[70%] flex flex-col gap-4 ">
@@ -41,7 +41,7 @@
                     $textBtn = "Créer";
                     $btnId = "create-account-btn";
                     $ariaLabel = "Bouton créer un compte";
-                    $title ="Créer";
+                    $title = "Créer";
                     require_once "partials/submit-button.php";
                     ?>
 
@@ -50,7 +50,7 @@
                     $hrefBtn = "connexion.php";
                     $textBtn = "Annuler";
                     $ariaLabel = " bouton annuler création";
-                    $title ="Annuler";
+                    $title = "Annuler";
                     require_once "partials/button.php";
                     ?>
                 </div>

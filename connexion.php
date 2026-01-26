@@ -8,7 +8,7 @@
     <?php require_once "partials/header-logo.php" ?>
 
     <main class="w-full flex-1 flex flex-col items-center justify-center">
-        <div class="w-full flex flex-col items-center justify-center gap-4 px-2 sm:w-[70%] lg:w-[50%]">
+        <div class="w-full flex flex-col items-center justify-center gap-4 px-2 pb-25 sm:w-[70%] lg:w-[50%]">
             <h1 class=" font-title text-white text-[20px]">Connecte-toi</h1>
 
             <form id="form-connexion-user" action="" method="POST" class=" w-[70%] flex flex-col gap-4 ">
@@ -35,7 +35,7 @@
                     $textBtn = "Connexion";
                     $btnId = "Connexion-btn";
                     $ariaLabel = "Bouton connexion";
-                    $title ="Connexion";
+                    $title = "Connexion";
                     require_once "partials/submit-button.php";
                     ?>
                 </div>

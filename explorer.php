@@ -5,9 +5,53 @@
     require_once "utils/bootstrap.php";
 
     require_once "partials/head.php";
+
+    // query for show all tracks with an offset with 50 tracks by page
+    $trackByPage = 3;
+    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+
+    if ($page < 1) {
+        $page = 1;
+    }
+
+    $offset = ($page - 1) * $trackByPage;
+
+    $request = $db->prepare('SELECT
+                                tracks.*,
+                                artists.name,
+                                albums.title AS title_album
+                            FROM
+                                tracks
+                            JOIN artists on artists.id = tracks.artist_id
+                            JOIN albums on albums.id = tracks.album_id
+                            ORDER BY
+                                listen_click ASC
+                            LIMIT
+                                :byPage
+                            OFFSET
+                                :offset
+                            ');
+
+    $request->bindValue('byPage', $trackByPage, PDO::PARAM_INT);
+    $request->bindValue('offset', $offset, PDO::PARAM_INT);
+    $request->execute();
+    $tracks = $request->fetchAll(PDO::FETCH_ASSOC);
+
+    // query for count how page need
+    $totalTracks = $db->prepare('SELECT 
+                                count(*)
+                             FROM
+                                tracks');
+
+    $totalTracks->execute();
+    $total = $totalTracks->fetchColumn();
+
+    $numberOfPages = ceil($total / $trackByPage);
+
     ?>
 
     <script defer src="assets/script/main.js"></script>
+    <script defer src="assets/script/pagination.js"></script>
     <script defer src="assets/script/player.js"></script>
     <title>AudioHub - Rechercher</title>
     </head>
@@ -35,7 +79,25 @@
                     </div>
 
                     <div class="tracks-container w-full flex flex-col items-center justify-center gap-2 py-4">
+                        <?php
+                        foreach ($tracks as $track) {
+                            $idTrack = $track['id'];
+                            $coverSrc = $track['img_path_small'];
+                            $album = $track['title_album'];
+                            $title = $track['title'];
+                            $artist = $track['name'];
+                            $audioSrc = $track['track_path'];
+                            require "partials/track-card.php";
+                        } ?>
+                    </div>
 
+                    <div class="Pagination-container flex justify-center gap-2">
+                        <?php for ($i = 1; $i <= $numberOfPages; $i++) {
+                        ?>
+                            <a aria-label="Aller à la page <?= $i ?>" data-page="<?= $i ?>" class="pagination-link font-main text-white focus-green hover-green focus:scale-150 hover:scale-150" href=""><?= $i ?></a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </section>
             </div>
