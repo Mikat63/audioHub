@@ -8,11 +8,13 @@
 
     // query for show 10 best listened tracks
     $request = $db->prepare('SELECT
-                                *,
-                                artists.name
+                                tracks.*,
+                                artists.name,
+                                albums.title AS title_album
                             FROM
                                 tracks
                             JOIN artists on artists.id = tracks.artist_id
+                            JOIN albums on albums.id = tracks.album_id
                             ORDER BY
                                 listen_click DESC
                             LIMIT 
@@ -41,6 +43,7 @@
     ?>
 
     <script defer src="assets/script/main.js"></script>
+    <script defer src="assets/script/player.js"></script>
     <title>AudioHub - Home</title>
     </head>
 
@@ -51,7 +54,7 @@
         ?>
 
 
-        <main class="w-full flex-1 flex flex-col items-center">
+        <main id="main-container" class="w-full flex-1 flex flex-col items-center pb-25">
             <div class="w-[90%] flex flex-col  gap-4 p-2 sm:w-[70%] lg:w-[50%]">
                 <section class="w-full h-auto linear-black-green p-4 flex flex-col gap-4 ">
                     <h2 class="font-title text-white">Bienvenue sur <span class="green-text">AudioHub</span></h2>
@@ -88,9 +91,12 @@
                         <?php
                         foreach ($tracksCharts as $key => $tracksChart) {
                             $numberPosition = $key;
+                            $idTrack = $tracksChart['id'];
                             $coverSrc = $tracksChart['img_path_small'];
+                            $album = $tracksChart['title_album'];
                             $title = $tracksChart['title'];
                             $artist = $tracksChart['name'];
+                            $audioSrc = $tracksChart['track_path'];
                             require "partials/track-card-chart.php";
                         };
                         ?>
@@ -99,11 +105,16 @@
 
             </div>
 
+
             <?php require_once "partials/sidebar.php"; ?>
         </main>
 
-        <?php
-        require_once "partials/footer.php"; ?>
+        <footer class="fixed bottom-0 w-full h-auto footer-grey-bg flex flex-col items-center">
+
+            <?php
+            require_once "partials/media-player.php";
+            require_once "partials/footer.php"; ?>
+        </footer>
     </body>
 
     </html>

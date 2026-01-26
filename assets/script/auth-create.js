@@ -42,7 +42,7 @@ function errorMessage(data) {
 
   if (data.status === "success") {
     showResponseModal(
-      "assets/icons/success-icon.png",
+      "assets/icons/success-icon.svg",
       "Icone de succès",
       data.message,
       "green-color-text",
@@ -57,7 +57,7 @@ function errorMessage(data) {
     data.status === "error-email-exist"
   ) {
     showResponseModal(
-      "assets/icons/failed-icon.png",
+      "assets/icons/failed-icon.svg",
       "Icone d'erreur",
       data.message,
       "red-color",
@@ -89,7 +89,7 @@ function createAccountForm(form) {
       .catch((error) => {
         console.error("Erreur réseau :", error);
         showResponseModal(
-          "assets/icons/failed-icon.png",
+          "assets/icons/failed-icon.svg",
           "Icone d'erreur",
           "La création du compte a échoué",
           "red-color",

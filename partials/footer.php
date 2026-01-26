@@ -1,5 +1,4 @@
-<footer class="w-full h-auto footer-grey-bg flex flex-col p-4 items-center green-color-border-top sm:hidden">
-    <nav class="w-full h-auto footer-grey-bg flex flex-row justify-between items-center">
+    <nav class="w-full h-auto footer-grey-bg flex flex-row justify-between items-center green-color-border-top p-4 sm:hidden">
 
         <a title="Accueil" aria-label="Revenir à l'accueil" href="home.php">
             <div class="flex flex-col items-center focus:scale-110 hover:scale-110 transition-transform focus-green-child">
@@ -31,4 +30,3 @@
             </div>
         </a>
     </nav>
-</footer>

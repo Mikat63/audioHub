@@ -50,7 +50,7 @@ function errorMessage(data) {
     data.status === "no-account"
   ) {
     showResponseModal(
-      "assets/icons/failed-icon.png",
+      "assets/icons/failed-icon.svg",
       "Icone d'erreur",
       data.message,
       "red-color",
@@ -82,7 +82,7 @@ function formConnexion(form) {
       .catch((error) => {
         console.error("Erreur réseau :", error);
         showResponseModal(
-          "assets/icons/failed-icon.png",
+          "assets/icons/failed-icon.svg",
           "Icone d'erreur",
           "Une erreur s'est produite",
           "red-color",
