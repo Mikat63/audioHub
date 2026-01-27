@@ -8,7 +8,7 @@
     ?>
 
     <script defer src="assets/script/main.js"></script>
-    <script defer src="assets/script/pagination.js"></script>
+    <script defer src="assets/script/search.js"></script>
     <script defer src="assets/script/player.js"></script>
     <title>AudioHub - Rechercher</title>
     </head>

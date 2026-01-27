@@ -11,7 +11,8 @@ function paginationTracks(paginationLink) {
     }),
   })
     .then((response) => response.json())
-    .then(showTracks);
+    .then(showTracks)
+    .catch((error) => {console.log(error)})
 }
 
 // track card for each track
@@ -41,7 +42,6 @@ function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
   `;
 }
 function showTracks(response) {
-  console.log(response);
   tracksContainer.innerHTML = "";
   response.tracks.forEach((track) => {
     tracksContainer.innerHTML += trackCard(

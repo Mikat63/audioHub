@@ -80,7 +80,8 @@ function counterClick(track) {
     }),
   })
   .then((response) => response.json())
-  .then((data) => console.log("Retour PHP:", data));
+  .then((data) => console.log("Retour PHP:", data))
+  .catch((error) => {console.log(error)})
 }
 
 playPause();
