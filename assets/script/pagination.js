@@ -1,7 +1,21 @@
 const tracksContainer = document.querySelector(".tracks-container");
 const paginationLinks = document.querySelectorAll(".pagination-link");
 
-function trackCard({ idTrack, coverSrc, album, title, artist, audioSrc }) {
+function paginationTracks(paginationLink) {
+  fetch("process/pagination.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      status: "next-page",
+      page: parseInt(paginationLink.dataset.page),
+    }),
+  })
+    .then((response) => response.json())
+    .then(showTracks);
+}
+
+// track card for each track
+function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
   return `
   <div data-id="${idTrack}" 
      data-cover="${coverSrc}" 
@@ -26,26 +40,18 @@ function trackCard({ idTrack, coverSrc, album, title, artist, audioSrc }) {
     </div>
   `;
 }
-
-function paginationTracks(paginationLink) {
-  fetch("process/pagination.php", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      status: "next-page",
-      page: paginationLink.dataset.page,
-    })
-      .then((response) => response.JSON())
-      .then((data) => {
-        trackCard(
-          data.trackId,
-          data.coverSrc,
-          data.album,
-          data.title,
-          data.artist,
-          data.audioSrc,
-        );
-      }),
+function showTracks(response) {
+  console.log(response);
+  tracksContainer.innerHTML = "";
+  response.tracks.forEach((track) => {
+    tracksContainer.innerHTML += trackCard(
+      track.idTrack,
+      track.coverSrc,
+      track.album,
+      track.title,
+      track.artist,
+      track.audioSrc,
+    );
   });
 }
 

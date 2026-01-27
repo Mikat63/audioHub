@@ -7,7 +7,7 @@
     require_once "partials/head.php";
 
     // query for show all tracks with an offset with 50 tracks by page
-    $trackByPage = 3;
+    $trackByPage = 50;
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
     if ($page < 1) {
