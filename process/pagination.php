@@ -114,7 +114,8 @@ try {
         'numberPage' => $numberPage,
         'tracks' => $nextTracks
     ]);
-} catch (\Throwable $th) {
+    
+} catch (\Throwable $error) {
     // Removed debug logs
     echo json_encode([
         'status' => 'error_server',

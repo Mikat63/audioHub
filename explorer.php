@@ -53,7 +53,7 @@
     <script defer src="assets/script/main.js"></script>
     <script defer src="assets/script/pagination.js"></script>
     <script defer src="assets/script/player.js"></script>
-    <title>AudioHub - Rechercher</title>
+    <title>AudioHub - Bibliothèque</title>
     </head>
 
     <body class="bg-black h-svh max-h-svh flex flex-col">

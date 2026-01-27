@@ -14,13 +14,13 @@
             <form id="form-connexion-user" action="" method="POST" class=" w-[70%] flex flex-col gap-4 ">
                 <div class="font-main flex flex-col sm:flex-row sm:justify-between lg:[50%]">
                     <label class=" text-white text-[16px]" for="email">Adresse email <span class="red-color">*</span></label>
-                    <input class="font-main text-black bg-white focus:scale-110 rounded-lg" type="text" id="email" name="email" minlength="10" maxlength="35" placeholder="Entre ton email" required autocomplete="password">
+                    <input class="font-main text-black bg-white focus:scale-110 rounded-lg px-2" type="text" id="email" name="email" minlength="10" maxlength="35" placeholder="Entre ton email" required autocomplete="password">
                 </div>
                 <p id="email-error" class='red-color font-main'></p>
 
                 <div class="font-main flex flex-col sm:flex-row sm:justify-between lg:[50%]">
                     <label class=" text-white text-[16px]" for="password">Mot de passe <span class="red-color">*</span></label>
-                    <input class="font-main text-black bg-white focus:scale-110 rounded-lg" type="password" id="password" name="password" minlength="8" maxlength="35" placeholder="Entre ton mot de passe " required autocomplete="current-password">
+                    <input class="font-main text-black bg-white focus:scale-110 rounded-lg px-2" type="password" id="password" name="password" minlength="8" maxlength="35" placeholder="Entre ton mot de passe " required autocomplete="current-password">
                 </div>
                 <p id="password-error" class='red-color font-main'></p>
 

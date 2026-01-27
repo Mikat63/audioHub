@@ -69,6 +69,20 @@ function nextTrack() {
   });
 }
 
+// function for count the numbers of click by track
+function counterClick(track) {
+  fetch("process/counter-click.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      trackId: track.dataset.id,
+      counterValue: parseInt(1),
+    }),
+  })
+  .then((response) => response.json())
+  .then((data) => console.log("Retour PHP:", data));
+}
+
 playPause();
 prevTrack();
 nextTrack();
@@ -79,5 +93,6 @@ tracks.forEach((track) => {
     mainContainer.classList.remove("pb-25");
     mainContainer.classList.add("pb-40");
     showPlayerInfos(track);
+    counterClick(track);
   });
 });

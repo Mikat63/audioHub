@@ -3,7 +3,7 @@
               <h2 class="font-title"> Entrez votre adresse mail</h2>
 
               <div class="font-main flex flex-col items-center">
-                  <input class="font-main text-black  bg-white focus:scale-110" type="text" id="reset-email" name="email" minlength="10" maxlength="35" placeholder="Entre ton email" required>
+                  <input class="font-main text-black  bg-white focus:scale-110 px-2 rounded-lg" type="text" id="reset-email" name="email" minlength="10" maxlength="35" placeholder="Entre ton email" required>
               </div>
 
               <div class="flex flex-row justify-center gap-6 ">
@@ -11,7 +11,7 @@
                     $btnId = "reset-password";
                     $textBtn = "Réinitialiser";
                     $ariaLabel = "Bouton de réinitialisation";
-                    $title ="réinitialiser";
+                    $title = "réinitialiser";
                     require_once "submit-button.php";
                     ?>
 
@@ -20,7 +20,7 @@
                     $btnId = "back-btn";
                     $hrefBtn = "#";
                     $ariaLabel = "Bouton annuler création du compte";
-                    $title ="annuler";
+                    $title = "annuler";
                     require_once "button.php";
                     ?>
               </div>
