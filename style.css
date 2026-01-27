@@ -740,6 +740,16 @@
       width: 33%;
     }
   }
+  .sm\:w-\[40\%\] {
+    @media (width >= 40rem) {
+      width: 40%;
+    }
+  }
+  .sm\:w-\[50\%\] {
+    @media (width >= 40rem) {
+      width: 50%;
+    }
+  }
   .sm\:w-\[70\%\] {
     @media (width >= 40rem) {
       width: 70%;
@@ -813,6 +823,21 @@
   .lg\:w-\[20\%\] {
     @media (width >= 64rem) {
       width: 20%;
+    }
+  }
+  .lg\:w-\[20\] {
+    @media (width >= 64rem) {
+      width: 20;
+    }
+  }
+  .lg\:w-\[30\%\] {
+    @media (width >= 64rem) {
+      width: 30%;
+    }
+  }
+  .lg\:w-\[30\] {
+    @media (width >= 64rem) {
+      width: 30;
     }
   }
   .lg\:w-\[50\%\] {

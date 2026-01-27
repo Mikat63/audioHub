@@ -1,4 +1,4 @@
-<div tabindex="0" class="track flex flex-row items-center p-2 gap-6 w-full hover:scale-105 focus:scale-105 sm:flex-col sm:w-[25%] sm:h-50 sm:items-center sm:justify-between lg:w-[20%]" data-id="<?= htmlspecialchars(strip_tags($idTrack)) ?>" data-cover="<?= htmlspecialchars(strip_tags($coverSrc)) ?>" data-album="<?= htmlspecialchars(strip_tags($album)) ?>" data-title="<?= htmlspecialchars(strip_tags($title)) ?>" data-artist="<?= htmlspecialchars(strip_tags($artist)) ?>" data-audiosrc="<?= htmlspecialchars(strip_tags($audioSrc)) ?>">
+<div tabindex="0" class="track flex flex-row items-center p-2 gap-6 w-full hover:scale-105 focus:scale-105  sm:w-[40%] lg:w-[30%]" data-id="<?= htmlspecialchars(strip_tags($idTrack)) ?>" data-cover="<?= htmlspecialchars(strip_tags($coverSrc)) ?>" data-album="<?= htmlspecialchars(strip_tags($album)) ?>" data-title="<?= htmlspecialchars(strip_tags($title)) ?>" data-artist="<?= htmlspecialchars(strip_tags($artist)) ?>" data-audiosrc="<?= htmlspecialchars(strip_tags($audioSrc)) ?>">
 
     <!-- cover tracks -->
     <div class="w-12 h-12 shrink-0">
@@ -6,13 +6,13 @@
     </div>
 
     <!-- title and artist infos -->
-    <div class="flex flex-col flex-1 min-w-0 gap-2 sm:flex-0">
-        <p aria-label="Titre" class="font-main text-white flex sm:items-center sm:justify-center"><?= htmlspecialchars(strip_tags($title)) ?></p>
-        <p aria-label="Artiste" class="font-main text-white flex sm:items-center sm:justify-center"><?= htmlspecialchars(strip_tags($artist)) ?></p>
+    <div class="flex flex-col flex-1 min-w-0 gap-2 ">
+        <p aria-label="Titre" class="font-main text-white flex "><?= htmlspecialchars(strip_tags($title)) ?></p>
+        <p aria-label="Artiste" class="font-main text-white flex "><?= htmlspecialchars(strip_tags($artist)) ?></p>
     </div>
 
     <!-- add playlist icon -->
     <button tabindex="0" aria-label="Ajouter le morceau à la playlist" class="w-6 h-6 ml-auto  sm:ml-0" id="add-playlist-btn" type="button">
-        <img class="w-full h-full flex items-center justify-center" src="assets/icons/import-icon.svg" alt="" title="ajouter à la playlist">
+        <img class="w-full h-full flex items-center" src="assets/icons/import-icon.svg" alt="" title="ajouter à la playlist">
     </button>
 </div>
