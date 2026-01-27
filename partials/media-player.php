@@ -12,13 +12,13 @@
     </div>
 
     <div class="player-btn-container w-auto h-auto flex items-center gap-2">
-        <div tabindex="0" id="prev-btn" class=" w-8 h-auto  cursor-pointer  focus:brightness-150 focus:green-color focus:scale-120">
+        <div tabindex="0" id="prev-btn" class="w-8 h-auto cursor-pointer focus:brightness-150 focus:green-color focus:scale-120">
             <img src="assets/icons/prev-button.svg" alt="Bouton play ou pause" class="w-full h-auto hover:brightness-150 hover-green-color hover:scale-120">
         </div>
-        <div tabindex="0" id="play-pause-btn" class=" w-10 h-auto cursor-pointer focus:brightness-150 focus:green-color focus:scale-120">
+        <div tabindex="0" id="play-pause-btn" class="w-10 h-auto cursor-pointer focus:brightness-150 focus:green-color focus:scale-120">
             <img id="play-pause-img" src="assets/icons/pause-button.svg" alt="Bouton play ou pause" class="w-full h-auto hover:brightness-150 hover-green-color hover:scale-120">
         </div>
-        <div tabindex="0" id="next-btn" class=" w-8 h-auto  cursor-pointer focus:brightness-150 focus:green-color focus:scale-120">
+        <div tabindex="0" id="next-btn" class="w-8 h-auto cursor-pointer focus:brightness-150 focus:green-color focus:scale-120">
             <img src="assets/icons/next-button.svg" alt="Bouton play ou pause" class="w-full h-auto hover:brightness-150 hover-green-color hover:scale-120">
         </div>
     </div>

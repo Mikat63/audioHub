@@ -77,7 +77,7 @@ tracks.forEach((track) => {
   track.addEventListener("click", () => {
     mediaPLayer.classList.remove("hidden");
     mainContainer.classList.remove("pb-25");
-    mainContainer.classList.add("pb-50");
+    mainContainer.classList.add("pb-40");
     showPlayerInfos(track);
   });
 });

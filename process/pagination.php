@@ -71,7 +71,19 @@ try {
     $request->bindValue('byPage', $trackByPage, PDO::PARAM_INT);
     $request->bindValue('offset', $offset, PDO::PARAM_INT);
     $request->execute();
-    $tracks = $request->fetchAll(PDO::FETCH_ASSOC);
+
+    $tracksRaw = $request->fetchAll(PDO::FETCH_ASSOC);
+    $tracks = [];
+    foreach ($tracksRaw as $row) {
+        $tracks[] = [
+            'idTrack'   => htmlspecialchars(strip_tags($row['id'])),
+            'coverSrc'  => htmlspecialchars(strip_tags($row['img_path_small'])),
+            'album'     => htmlspecialchars(strip_tags($row['title_album'])),
+            'title'     => htmlspecialchars(strip_tags($row['title'])),
+            'artist'    => htmlspecialchars(strip_tags($row['name'])),
+            'audioSrc'  => htmlspecialchars(strip_tags($row['track_path'])),
+        ];
+    }
 
     // query for count how page need
     $totalTracks = $db->prepare('SELECT 

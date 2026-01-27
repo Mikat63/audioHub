@@ -25,7 +25,7 @@
                             JOIN artists on artists.id = tracks.artist_id
                             JOIN albums on albums.id = tracks.album_id
                             ORDER BY
-                                listen_click ASC
+                                tracks.title ASC
                             LIMIT
                                 :byPage
                             OFFSET
@@ -64,7 +64,7 @@
 
 
         <main id="main-container" class="w-full flex-1 flex flex-col items-center pb-25">
-            <div class="w-[90%] flex flex-col items-center justify-center py-12 sm:w-[80%] xl:w-[60%]">
+            <div class="w-[90%] flex flex-col items-center justify-center py-12">
                 <section class="w-full h-auto flex flex-col gap-8">
                     <h2 class="w-auto font-title text-white flex justify-center">trouve ton style en explorant la bibliothèque !</h2>
 
@@ -78,7 +78,7 @@
                         ?>
                     </div>
 
-                    <div class="tracks-container w-full flex flex-col items-center justify-center gap-2 py-4">
+                    <div class="tracks-container w-full flex flex-col items-center justify-center gap-2 py-4 sm:flex-row sm:flex-wrap">
                         <?php
                         foreach ($tracks as $track) {
                             $idTrack = $track['id'];
