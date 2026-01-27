@@ -23,10 +23,10 @@
         <main id="main-container" class="w-full flex-1 flex flex-col items-center pb-25">
             <div class="w-[90%] flex flex-col items-center justify-center py-12 md:w-[70%]">
                 <section class="w-full h-auto flex flex-col gap-8">
-                    <h2 class="w-auto font-title text-white flex justify-center">Cherchet ta track ou ton artiste préféré !</h2>
+                    <h2 class="w-auto font-title text-white flex justify-center">Cherche ta track ou ton artiste préféré !</h2>
 
-                    <form action="" class="flex flex-col ">
-                        <input class="w-[80%] font-main text-white footer-grey-bg  focus:scale-110 px-2 rounded-lg green-border" type="text" id="reset-email" name="email" minlength="10" maxlength="35" placeholder="Entre ton email" required>
+                    <form id="form-search" action="" class="flex flex-col">
+                        <input id="input-form-search" aria-label="barre de recherche pour trouver un artiste ou une track" class="w-full font-main text-white footer-grey-bg focus:scale-110 hover:scale-110 px-2 rounded-lg green-border sm:w-2/3 lg:w-[40%]" type="text" name="search-input" placeholder="Entre une track ou un artiste">
                     </form>
 
                     <div class="tracks-container w-full flex flex-col items-center justify-center gap-2 py-4 sm:flex-row sm:flex-wrap">

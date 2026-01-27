@@ -129,5 +129,193 @@
 }
 
 .green-border {
-  border: 2px solid rgba(38, 189, 98, 0.2); /* --green-color avec 50% d'opacité */
+  border: 2px solid rgba(38, 189, 98, 0.2);
+}
+
+/*styles loader   */
+.loaderf-bg {
+  background: linear-gradient(120deg, #1db954 0%, #191414 100%);
+  animation: loaderf-bg-move 6s ease-in-out infinite alternate;
+}
+
+@keyframes loaderf-bg-move {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.2);
+  }
+}
+
+.loaderf-logo {
+  animation: loaderf-pulse 1.5s infinite;
+}
+
+@keyframes loaderf-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+.loaderf-spinner {
+  border: 4px solid #fff;
+  border-top: 4px solid #1db954;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: loaderf-spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes loaderf-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loaderf-message {
+  color: #fff;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* loaderf : animation logo  */
+.audiohub-logo-anim {
+  animation: audiohub-logo-pulse 1.5s infinite;
+}
+@keyframes audiohub-logo-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.08);
+    filter: brightness(1.5);
+  }
+}
+
+/* loaderf : vinyle animé    */
+.loaderf-vinyl {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, #222 60%, #111 100%);
+  box-shadow:
+    0 0 24px 0 #000a,
+    0 0 0 8px #191414;
+  border: 6px solid #191414;
+  margin: 0 auto 1.5rem auto;
+  animation: loaderf-vinyl-spin 2.5s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes loaderf-vinyl-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loaderf-vinyl-groove {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.loaderf-vinyl-groove.groove1 {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #333;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.loaderf-vinyl-groove.groove2 {
+  width: 90px;
+  height: 90px;
+  border: 1px solid #444;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.loaderf-vinyl-groove.groove3 {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #555;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.loaderf-vinyl-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: #191414;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #1db954;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.loaderf-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation: loaderf-pulse 1.5s infinite;
+  object-fit: cover;
+  z-index: 3;
+}
+
+/* loaderf : effet lumière vinyle */
+.loaderf-vinyl {
+  overflow: hidden;
+  position: relative;
+}
+.loaderf-vinyl::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    rgba(255, 255, 255, 0.18) 0deg,
+    rgba(255, 255, 255, 0.08) 40deg,
+    rgba(255, 255, 255, 0) 80deg,
+    rgba(255, 255, 255, 0.18) 100deg
+  );
+  mix-blend-mode: lighten;
+  pointer-events: none;
+  animation: loaderf-vinyl-light 2.5s linear infinite;
+  z-index: 1;
+}
+@keyframes loaderf-vinyl-light {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
