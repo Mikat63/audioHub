@@ -52,8 +52,8 @@ try {
             albums.title AS title_album
         FROM    
             tracks
-        JOIN albums ON albums.id = tracks.album_id
-        JOIN artists ON artists.id = tracks.artist_id
+        LEFT JOIN albums ON albums.id = tracks.album_id
+        LEFT JOIN artists ON artists.id = tracks.artist_id
         WHERE tracks.title LIKE :value OR artists.name LIKE :value'
     );
 

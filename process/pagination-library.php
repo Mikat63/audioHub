@@ -1,4 +1,5 @@
 <?php
+session_start();
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json; charset=utf-8');
 
@@ -58,8 +59,10 @@ try {
                                 albums.title AS title_album
                             FROM
                                 tracks
-                            LEFT JOIN artists on artists.id = tracks.artist_id
-                            LEFT JOIN albums on albums.id = tracks.album_id
+                            LEFT JOIN artists ON artists.id = tracks.artist_id
+                            LEFT JOIN albums ON albums.id = tracks.album_id
+                            WHERE
+                                tracks.id_user = :idUser
                             ORDER BY
                                 tracks.title ASC
                             LIMIT
@@ -70,6 +73,8 @@ try {
 
     $request->bindValue('byPage', $trackByPage, PDO::PARAM_INT);
     $request->bindValue('offset', $offset, PDO::PARAM_INT);
+    $request->bindValue('idUser', $_SESSION['user_id'], PDO::PARAM_INT);
+
     $request->execute();
 
     $tracks = $request->fetchAll(PDO::FETCH_ASSOC);

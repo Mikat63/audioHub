@@ -1,16 +1,13 @@
-const inputFormSearch = document.querySelector("#input-form-search");
 const tracksContainer = document.querySelector(".tracks-container");
-let debounceTimer;
+const paginationLinks = document.querySelectorAll(".pagination-link");
 
-// fetch for each keyup listener
-function searchByKeyUp(keyValue) {
-  console.log(keyValue);
-  fetch("./process/search-track-artist.php", {
+function paginationTracks(paginationLink) {
+  fetch("process/pagination-library.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      status: "keyup touch",
-      value: keyValue,
+      status: "next-page",
+      page: parseInt(paginationLink.dataset.page),
     }),
   })
     .then((response) => response.json())
@@ -22,8 +19,11 @@ function searchByKeyUp(keyValue) {
 
 // track card for each track
 function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
-    const safeCover = coverSrc && coverSrc !== 'null' && coverSrc !== '' ? coverSrc : 'assets/icons/default-album.svg';
-    return `
+  const safeCover =
+    coverSrc && coverSrc !== "null" && coverSrc !== ""
+      ? coverSrc
+      : "assets/icons/default-album.svg";
+  return `
     <div data-id="${idTrack}" 
      data-cover="${safeCover}" 
      data-album="${album}" 
@@ -47,17 +47,8 @@ function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
     </div>
     `;
 }
-
-// show each track result
 function showTracks(response) {
   tracksContainer.innerHTML = "";
-
-  if (!response.tracks || response.tracks.length === 0) {
-    tracksContainer.innerHTML =
-      "<p class='text-white'>Aucun résultat trouvé</p>";
-    return;
-  }
-
   response.tracks.forEach((track) => {
     tracksContainer.innerHTML += trackCard(
       track.idTrack,
@@ -70,15 +61,9 @@ function showTracks(response) {
   });
 }
 
-inputFormSearch.addEventListener("keyup", () => {
-  clearTimeout(debounceTimer);
-
-  debounceTimer = setTimeout(() => {
-    if (inputFormSearch.value.trim() === "") {
-      tracksContainer.innerHTML = "";
-      return;
-    }
-
-    searchByKeyUp(inputFormSearch.value);
-  }, 200);
+paginationLinks.forEach((paginationLink) => {
+  paginationLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    paginationTracks(paginationLink);
+  });
 });

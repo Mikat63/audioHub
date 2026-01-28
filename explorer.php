@@ -22,8 +22,8 @@
                                 albums.title AS title_album
                             FROM
                                 tracks
-                            JOIN artists on artists.id = tracks.artist_id
-                            JOIN albums on albums.id = tracks.album_id
+                            LEFT JOIN artists ON artists.id = tracks.artist_id
+                            LEFT JOIN albums ON albums.id = tracks.album_id
                             ORDER BY
                                 tracks.title ASC
                             LIMIT
@@ -39,9 +39,9 @@
 
     // query for count how page need
     $totalTracks = $db->prepare('SELECT 
-                                count(*)
-                             FROM
-                                tracks');
+                                          count(*)
+                                      FROM
+                                          tracks');
 
     $totalTracks->execute();
     $total = $totalTracks->fetchColumn();
@@ -82,7 +82,8 @@
                         <?php
                         foreach ($tracks as $track) {
                             $idTrack = $track['id'];
-                            $coverSrc = $track['img_path_small'];
+                            $coverSrc = $track['img_path_small'] ?? 'assets/icons/default-album.svg';
+                            if (!$coverSrc) $coverSrc = 'assets/icons/default-album.svg';
                             $album = $track['title_album'];
                             $title = $track['title'];
                             $artist = $track['name'];
