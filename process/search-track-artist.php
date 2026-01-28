@@ -32,18 +32,59 @@ if (!is_string($data['status'])) {
     exit();
 };
 
-if (!intval($data['value'])) {
+if (!is_string($data['value'])) {
     echo json_encode([
         'status' => "error",
-        'message' => "value isn't int"
+        'message' => "value isn't string"
     ]);
     exit();
 };
 
 try {
-    $value = $data['value']
+    require_once "../utils/db_connect.php";
 
-    
+    $value = htmlspecialchars(strip_tags($data['value']));
+
+    $request = $db->prepare(
+        'SELECT
+            tracks.*,
+            artists.name,
+            albums.title AS title_album
+        FROM    
+            tracks
+        JOIN albums ON albums.id = tracks.album_id
+        JOIN artists ON artists.id = tracks.artist_id
+        WHERE tracks.title LIKE :value OR artists.name LIKE :value'
+    );
+
+    $request->execute([
+        ':value' => $value . "%"
+    ]);
+
+    $tracks = $request->fetchAll(PDO::FETCH_ASSOC);
+
+    $resultTracks = [];
+
+    foreach ($tracks as $track) {
+        $resultTracks[] = [
+            'idTrack' => $track['id'],
+            'coverSrc' => $track['img_path_small'],
+            'album' => $track['title_album'],
+            'title' => $track['title'],
+            'artist' => $track['name'],
+            'audioSrc' => $track['track_path'],
+        ];
+    };
+
+    echo json_encode([
+        'status' => 'success',
+        'tracks' => $resultTracks
+    ]);
 } catch (\Throwable $th) {
-    //throw $th;
+
+    echo json_encode([
+        'status' => 'error_server',
+        'message' => "error from server"
+    ]);
+    exit();
 }

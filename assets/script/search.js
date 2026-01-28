@@ -10,7 +10,7 @@ function searchByKeyUp(keyValue) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       status: "keyup touch",
-      Value: keyValue,
+      value: keyValue,
     }),
   })
     .then((response) => response.json())
@@ -73,7 +73,10 @@ inputFormSearch.addEventListener("keyup", () => {
   clearTimeout(debounceTimer);
 
   debounceTimer = setTimeout(() => {
-    console.log("recherche");
+    if (inputFormSearch.value.trim() === "") {
+      tracksContainer.innerHTML = "";
+      return;
+    }
 
     searchByKeyUp(inputFormSearch.value);
   }, 200);

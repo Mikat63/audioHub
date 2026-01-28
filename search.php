@@ -26,7 +26,7 @@
                     <h2 class="w-auto font-title text-white flex justify-center">Cherche ta track ou ton artiste préféré !</h2>
 
                     <form id="form-search" action="" class="flex flex-col">
-                        <input id="input-form-search" aria-label="barre de recherche pour trouver un artiste ou une track" class="w-full font-main text-white footer-grey-bg focus:scale-110 hover:scale-110 px-2 rounded-lg green-border sm:w-2/3 lg:w-[40%]" type="text" name="search-input" placeholder="Entre une track ou un artiste">
+                        <input id="input-form-search" aria-label="barre de recherche pour trouver un artiste ou une track" class="w-[90%] font-main text-white footer-grey-bg focus:scale-105 hover:scale-110 px-2 rounded-lg green-border sm:w-2/3 lg:w-[40%]" type="text" name="search-input" placeholder="Entre une track ou un artiste">
                     </form>
 
                     <div class="tracks-container w-full flex flex-col items-center justify-center gap-2 py-4 sm:flex-row sm:flex-wrap">

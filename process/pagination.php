@@ -39,7 +39,40 @@ if (!intval($data['page'])) {
     exit();
 };
 
-try {;
+try {
+    require_once "../utils/db_connect.php";
+
+    $numberPage = intval($data["page"]) ? intval($data["page"]) : 1;
+    $trackByPage = 50;
+
+
+    if ($numberPage < 1) {
+        $numberPage = 1;
+    }
+
+    $offset = ($numberPage - 1) * $trackByPage;
+
+    $request = $db->prepare('SELECT
+                                tracks.*,
+                                artists.name,
+                                albums.title AS title_album
+                            FROM
+                                tracks
+                            LEFT JOIN artists on artists.id = tracks.artist_id
+                            LEFT JOIN albums on albums.id = tracks.album_id
+                            ORDER BY
+                                listen_click ASC
+                            LIMIT
+                                :byPage
+                            OFFSET
+                                :offset
+                            ');
+
+    $request->bindValue('byPage', $trackByPage, PDO::PARAM_INT);
+    $request->bindValue('offset', $offset, PDO::PARAM_INT);
+    $request->execute();
+
+    $tracks = $request->fetchAll(PDO::FETCH_ASSOC);
 
     $resultTracks = [];
 
@@ -56,10 +89,10 @@ try {;
 
     echo json_encode([
         'status' => 'success',
-        'tracks' => $nextTracks
+        'tracks' => $resultTracks
     ]);
 } catch (\Throwable $error) {
-    // Removed debug logs
+
     echo json_encode([
         'status' => 'error_server',
         'message' => "error from server"
