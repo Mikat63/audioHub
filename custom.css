@@ -6,6 +6,7 @@
   --green-color: #26bd62;
   --green-bg: #4b8161;
   --grey-color: #1a191b;
+  --grey-input-color: #53524f;
   --red-color: #ff1a1a;
   --footer-grey-bg: #1b1919;
 }
@@ -86,6 +87,10 @@
   background-color: var(--grey-color);
 }
 
+.grey-input-color {
+  background-color: var(--grey-input-color);
+}
+
 .footer-grey-bg {
   background-color: var(--footer-grey-bg);
 }
@@ -116,6 +121,10 @@
 
 .red-color {
   color: var(--red-color);
+}
+
+.red-color-bg {
+  background-color: var(--red-color);
 }
 
 .green-color-text {
