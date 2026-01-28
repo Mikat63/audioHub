@@ -311,29 +311,17 @@
   .w-50 {
     width: calc(var(--spacing) * 50);
   }
-  .w-128 {
-    width: calc(var(--spacing) * 128);
-  }
   .w-\[20\%\] {
     width: 20%;
   }
-  .w-\[24px\] {
-    width: 24px;
-  }
   .w-\[70\%\] {
     width: 70%;
-  }
-  .w-\[75px\] {
-    width: 75px;
   }
   .w-\[80\%\] {
     width: 80%;
   }
   .w-\[90\%\] {
     width: 90%;
-  }
-  .w-\[100px\] {
-    width: 100px;
   }
   .w-auto {
     width: auto;
@@ -425,20 +413,8 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
-  .gap-9 {
-    gap: calc(var(--spacing) * 9);
-  }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
-  }
-  .gap-12 {
-    gap: calc(var(--spacing) * 12);
-  }
-  .gap-\[32px\] {
-    gap: 32px;
-  }
-  .gap-\[48px\] {
-    gap: 48px;
   }
   .truncate {
     overflow: hidden;
@@ -481,6 +457,12 @@
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-\[16px\] {
+    padding-inline: 16px;
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
@@ -801,6 +783,14 @@
 .font-main {
   font-family: var(--main-font);
   font-size: 16px;
+}
+.font-main-profil {
+  font-family: var(--main-font);
+  font-size: 36px;
+}
+.font-main-profil-username {
+  font-family: var(--main-font);
+  font-size: 24px;
 }
 .font-int-stats {
   font-family: var(--main-font);

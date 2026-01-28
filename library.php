@@ -92,7 +92,7 @@
                         $title = "Filtrer";
                         $btnId = "filter-btn";
                         $textBtn = "Filtrer";
-                        require_once "partials/filter-btn.php";
+                        require_once "partials/simple-btn.php";
                         ?>
                     </div>
 
@@ -103,8 +103,8 @@
                             $coverSrc = $track['img_path_small'] ?? 'assets/icons/default-album.svg';
                             if (!$coverSrc) $coverSrc = 'assets/icons/default-album.svg';
                             $album = $track['title_album'] ?? 'Sans album';
-                            $title = $track['title'];
-                            $artist = $track['name'] ?? 'Inconnu';
+                            $title = $track['title'] ?? '';
+                            $artist = $track['name'] ?? '';
                             $audioSrc = $track['track_path'];
                             require "partials/track-card.php";
                         } ?>

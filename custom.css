@@ -57,6 +57,16 @@
   font-size: 16px;
 }
 
+.font-main-profil {
+  font-family: var(--main-font);
+  font-size: 36px;
+}
+
+.font-main-profil-username {
+  font-family: var(--main-font);
+  font-size: 24px;
+}
+
 .font-int-stats {
   font-family: var(--main-font);
   font-size: 20px;
