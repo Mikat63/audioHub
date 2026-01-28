@@ -38,7 +38,7 @@
 
 
         <main id="main-container" class="w-full flex-1 flex flex-col items-center pb-9">
-            <div class="w-[90%] flex flex-col items-center justify-center gap-8 py-12">
+            <div class="w-[90%] flex flex-col items-center justify-center gap-8 py-12 md:w-[70%]">
 
                 <div class="username-container w-auto h-auto flex flex-col gap-2 items-center ">
                     <div aria-label="photo de ton profil" class="w-25 h-25 green-color rounded-full font-main flex justify-center items-center font-main-profil"><?= strtoupper(mb_substr($_SESSION['user_username'], 0, 1)) ?></div>
@@ -110,7 +110,7 @@
                     ?>
                 </div>
 
-                <section aria-label="Espace addministrateir" class="w-1/2 h-auto linear-black-green p-4 flex flex-col gap-4 items-center justify-center ">
+                <section aria-label="Espace addministrateir" class="w-full h-auto linear-black-green p-4 flex flex-col gap-4 items-center justify-center md:w-1/2 ">
                     <h2 class="font-title text-white">Zspace <span class="green-text">administrateur</span></h2>
 
                     <?php
