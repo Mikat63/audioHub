@@ -74,7 +74,7 @@
                         $title = "Filtrer";
                         $btnId = "filter-btn";
                         $textBtn = "Filtrer";
-                        require_once "partials/filter-btn.php";
+                        require_once "partials/simple-btn.php";
                         ?>
                     </div>
 
@@ -82,7 +82,7 @@
                         <?php
                         foreach ($tracks as $track) {
                             $idTrack = $track['id'];
-                            $coverSrc = $track['img_path_small'] ?? 'assets/icons/default-album.svg';
+                            $coverSrc = $track['img_path_small'] ?? '';
                             if (!$coverSrc) $coverSrc = 'assets/icons/default-album.svg';
                             $album = $track['title_album'];
                             $title = $track['title'];

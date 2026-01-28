@@ -6,6 +6,7 @@
   --green-color: #26bd62;
   --green-bg: #4b8161;
   --grey-color: #1a191b;
+  --grey-input-color: #53524f;
   --red-color: #ff1a1a;
   --footer-grey-bg: #1b1919;
 }
@@ -57,6 +58,16 @@
   font-size: 16px;
 }
 
+.font-main-profil {
+  font-family: var(--main-font);
+  font-size: 36px;
+}
+
+.font-main-profil-username {
+  font-family: var(--main-font);
+  font-size: 24px;
+}
+
 .font-int-stats {
   font-family: var(--main-font);
   font-size: 20px;
@@ -74,6 +85,10 @@
 
 .grey-color {
   background-color: var(--grey-color);
+}
+
+.grey-input-color {
+  background-color: var(--grey-input-color);
 }
 
 .footer-grey-bg {
@@ -106,6 +121,10 @@
 
 .red-color {
   color: var(--red-color);
+}
+
+.red-color-bg {
+  background-color: var(--red-color);
 }
 
 .green-color-text {

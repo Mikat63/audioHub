@@ -12,23 +12,23 @@
             <h1 class=" font-title text-white text-[20px]">Crée ton compte</h1>
 
             <form id="form-create-account" action="" method="POST" class=" w-[70%] flex flex-col gap-4 ">
-                <div class="font-main flex flex-col sm:flex-row sm:justify-between lg:[50%]">
+                <div class="font-main flex flex-col sm:flex-row sm:justify-between gap-2 lg:[50%]">
                     <label class=" text-white text-[16px]" for="pseudo">Pseudo <span class="red-color">*</span></label>
-                    <input class="font-main text-black bg-white focus:scale-110 rounded-lg px-2" type="text" id="pseudo" name="pseudo" minlength="5" maxlength="20" placeholder="Entre ton pseudo" required autocomplete="pseudo">
+                    <input class="font-main text-white footer-grey-bg green-border focus:scale-110 rounded-lg px-2" type="text" id="pseudo" name="pseudo" minlength="5" maxlength="20" placeholder="Entre ton pseudo" required autocomplete="pseudo">
                 </div>
                 <p id="pseudo-error" class='red-color font-main'></p>
 
 
-                <div class="font-main flex flex-col sm:flex-row sm:justify-between lg:[50%]">
+                <div class="font-main flex flex-col sm:flex-row sm:justify-between gap-2 lg:[50%]">
                     <label class=" text-white text-[16px]" for="email">Email <span class="red-color">*</span></label>
-                    <input class="font-main text-black bg-white focus:scale-110 rounded-lg px-2" type="text" id="email" name="email" minlength="10" maxlength="20" placeholder="Entre ton email" required autocomplete="email">
+                    <input class="font-main text-white footer-grey-bg green-border focus:scale-110 rounded-lg px-2" type="text" id="email" name="email" minlength="10" maxlength="20" placeholder="Entre ton email" required autocomplete="email">
                 </div>
                 <p id="email-error" class='red-color font-main'></p>
 
 
-                <div class="font-main flex flex-col sm:flex-row sm:justify-between lg:[50%]">
+                <div class="font-main flex flex-col sm:flex-row sm:justify-between gap-2 lg:[50%]">
                     <label class=" text-white text-[16px]" for="password">Mot de passe <span class="red-color">*</span> </label>
-                    <input class="font-main text-black bg-white focus:scale-110 rounded-lg px-2" type="password" id="password" name="password" minlength="8" maxlength="20" placeholder="Entre ton mot de passe " required autocomplete="current-password">
+                    <input class="font-main text-white footer-grey-bg green-border focus:scale-110 rounded-lg px-2" type="password" id="password" name="password" minlength="8" maxlength="20" placeholder="Entre ton mot de passe " required autocomplete="current-password">
                 </div>
                 <p id="password-error" class='red-color font-main'></p>
 
