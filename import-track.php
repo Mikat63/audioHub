@@ -28,7 +28,7 @@
                     <p class="font-main text-white">Partage votre musique avec la communauté AudioHub</p>
                 </div>
 
-                <form action="" class="flex flex-col items-center justify-center gap-4 footer-grey-bg green-border rounded-lg w-full h-auto p-4">
+                <form id="import-form" action="" class="flex flex-col items-center justify-center gap-4 footer-grey-bg green-border rounded-lg w-full h-auto p-4">
                     <!-- music upload  -->
 
                     <div class="w-full flex flex-col items-center justify-center gap-4 sm:flex-row">

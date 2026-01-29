@@ -79,9 +79,11 @@ function counterClick(track) {
       counterValue: parseInt(1),
     }),
   })
-  .then((response) => response.json())
-  .then((data) => console.log("Retour PHP:", data))
-  .catch((error) => {console.log(error)})
+    .then((response) => response.json())
+    .then((data) => console.log("Retour PHP:", data))
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 playPause();
@@ -96,4 +98,14 @@ tracks.forEach((track) => {
     showPlayerInfos(track);
     counterClick(track);
   });
+});
+
+playerTrackAudio.addEventListener("ended", () => {
+  trackIndex += 1;
+  if (trackIndex > tracks.length - 1) {
+    trackIndex = 0;
+  }
+
+  showPlayerInfos(tracks[trackIndex]);
+  counterClick(tracks[trackIndex]);
 });
