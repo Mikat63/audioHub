@@ -1,3 +1,4 @@
 <?php
-error_log(print_r($_POST, true));
-error_log(print_r($_FILES, true));
+header('Content-Type: application/json; charset=utf-8');
+
+

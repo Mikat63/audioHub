@@ -21,7 +21,7 @@ function paginationTracks(paginationLink) {
 function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
   const safeCover =
     coverSrc && coverSrc !== "null" && coverSrc !== ""
-      ? encodeURI(coverSrc)
+      ? coverSrc
       : "assets/icons/default-album.svg";
   return `
     <div data-id="${idTrack}" 
@@ -47,6 +47,7 @@ function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
     </div>
     `;
 }
+
 function showTracks(response) {
   tracksContainer.innerHTML = "";
   response.tracks.forEach((track) => {

@@ -24,33 +24,31 @@ function searchByKeyUp(keyValue) {
 function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
   const safeCover =
     coverSrc && coverSrc !== "null" && coverSrc !== ""
-      ? encodeURI(coverSrc)
+      ? coverSrc
       : "assets/icons/default-album.svg";
-  const safeTitle = title ?? "";
-  const safeArtist = artist ?? "";
   return `
-      <div data-id="${idTrack}" 
-       data-cover="${safeCover}" 
-       data-album="${album}" 
-       data-title="${safeTitle}" 
-       data-artist="${safeArtist}" 
-       data-audiosrc="${audioSrc}" 
-       tabindex="0" class="track flex flex-row items-center p-2 gap-6 w-full hover:scale-105 focus:scale-105 sm:w-[40%] lg:w-[30%]">
-        <!-- cover tracks -->
-        <div class="w-12 h-12 shrink-0">
-          <img src="${safeCover}" alt="Pochette de l'album de ${album}" loading="lazy">
-        </div>
-        <!-- title and artist infos -->
-        <div class="flex flex-col flex-1 min-w-0">
-          <p aria-label="Titre" class="font-main text-white ">${safeTitle}</p>
-          <p aria-label="Artiste" class="font-main text-white ">${safeArtist}</p>
-        </div>
-        <!-- add playlist icon -->
-        <button tabindex="0" aria-label="Ajouter le morceau à la playlist" class="w-6 h-6 ml-auto shrink-0 hover:scale-110 focus:scale-110" id="add-playlist-btn" type="button">
-          <img class="w-full h-full" src="assets/icons/import-icon.svg" alt="" title="ajouter à la playlist">
-        </button>
+    <div data-id="${idTrack}" 
+     data-cover="${safeCover}" 
+     data-album="${album}" 
+     data-title="${title}" 
+     data-artist="${artist}" 
+     data-audiosrc="${audioSrc}" 
+     tabindex="0" class="track flex flex-row items-center gap-6 w-full sm:w-[80%] md:w-[70%] xl:w-[60%] hover:scale-105 focus:scale-105">
+      <!-- cover tracks -->
+      <div class="w-12 h-12 shrink-0">
+        <img src="${safeCover}" alt="Pochette de l'album de ${album}" loading="lazy">
       </div>
-      `;
+      <!-- title and artist infos -->
+      <div class="flex flex-col flex-1 min-w-0 gap-1">
+        <p aria-label="Titre" class="font-main text-white ">${title}</p>
+        <p aria-label="Artiste" class="font-main text-white ">${artist}</p>
+      </div>
+      <!-- add playlist icon -->
+      <button tabindex="0" aria-label="Ajouter le morceau à la playlist" class="w-6 h-6 ml-auto shrink-0 hover:scale-110 focus:scale-110" id="add-playlist-btn" type="button">
+        <img class="w-full h-full" src="assets/icons/import-icon.svg" alt="" title="ajouter à la playlist">
+      </button>
+    </div>
+    `;
 }
 
 // show each track result
