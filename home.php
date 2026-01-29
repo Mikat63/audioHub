@@ -63,7 +63,7 @@
                     $btnId = "explorer-btn";
                     $hrefBtn = "explorer.php";
                     $textBtn = "Explorer";
-                    $imgBtnSrc = "assets/icons/explorer-icon.svg";
+                    $imgBtnSrc = "assets/icons/play-icon.svg";
                     $imgBtnSrcAlt = "icone du bouton explorer";
                     $ariaLabel = "Bouton pour aller à la bibliothèque de tracks";
                     $title = "Explorer";

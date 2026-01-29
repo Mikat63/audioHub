@@ -52,13 +52,13 @@
      <div class="w-full h-auto flex flex-row justify-center gap-2">
          <div title="Aller sur Facebook" class="w-6 h-6">
              <a class="block w-full h-full hover:scale-125 focus:scale-125 transition-transform cursor-pointer " target="_blank" href="https://www.facebook.com/?locale=fr_FR">
-                 <img class=" w-full h-full flex flex-col items-center " src="assets/icons/facebook.png" alt="Aller vers Instagram">
+                 <img class=" w-full h-full flex flex-col items-center " src="assets/icons/facebook-icon.svg" alt="Aller vers Instagram">
              </a>
          </div>
 
          <div title="Aller sur Instagram" class="w-6 h-6">
              <a class="block w-full h-full hover:scale-125 focus:scale-125 transition-transform cursor-pointer" target="_blank" href="https://www.instagram.com/">
-                 <img class="w-full h-full flex flex-col items-center" src="assets/icons/instagram.png" alt="Aller vers facebook">
+                 <img class="w-full h-full flex flex-col items-center" src="assets/icons/instagram-icon.svg" alt="Aller vers facebook">
              </a>
          </div>
      </div>

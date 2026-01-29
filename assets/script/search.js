@@ -24,7 +24,7 @@ function searchByKeyUp(keyValue) {
 function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
   const safeCover =
     coverSrc && coverSrc !== "null" && coverSrc !== ""
-      ? coverSrc
+      ? encodeURI(coverSrc)
       : "assets/icons/default-album.svg";
   const safeTitle = title ?? "";
   const safeArtist = artist ?? "";
