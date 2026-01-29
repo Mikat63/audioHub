@@ -35,7 +35,7 @@ function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
        data-title="${safeTitle}" 
        data-artist="${safeArtist}" 
        data-audiosrc="${audioSrc}" 
-       tabindex="0" class="track flex flex-row items-center gap-6 w-full sm:w-[80%] md:w-[70%] xl:w-[60%] hover:scale-105 focus:scale-105">
+       tabindex="0" class="track flex flex-row items-center p-2 gap-6 w-full hover:scale-105 focus:scale-105 sm:w-[40%] lg:w-[30%]">
         <!-- cover tracks -->
         <div class="w-12 h-12 shrink-0">
           <img src="${safeCover}" alt="Pochette de l'album de ${album}" loading="lazy">

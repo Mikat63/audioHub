@@ -36,7 +36,7 @@ function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
         <img src="${safeCover}" alt="Pochette de l'album de ${album}" loading="lazy">
       </div>
       <!-- title and artist infos -->
-      <div class="flex flex-col flex-1 min-w-0">
+      <div class="flex flex-col flex-1 min-w-0 gap-1">
         <p aria-label="Titre" class="font-main text-white ">${title}</p>
         <p aria-label="Artiste" class="font-main text-white ">${artist}</p>
       </div>

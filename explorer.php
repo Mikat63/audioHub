@@ -78,7 +78,7 @@
                         ?>
                     </div>
 
-                    <div class="tracks-container w-full flex flex-col items-center justify-center gap-2 py-4 sm:flex-row sm:flex-wrap">
+                    <div class="tracks-container w-full flex flex-row flex-wrap items-center justify-center gap-2 py-4">
                         <?php
                         foreach ($tracks as $track) {
                             $idTrack = $track['id'];

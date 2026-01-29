@@ -26,7 +26,6 @@
 
     <script defer src="assets/script/main.js"></script>
     <script defer src="assets/script/pagination-library.js"></script>
-    <script defer src="assets/script/player.js"></script>
     <title>AudioHub - Profil</title>
     </head>
 
@@ -71,7 +70,7 @@
                             <div class="w-8 h-8">
                                 <img class="w-full h-auto" src="assets/icons/help-icon.svg" alt="Icon d'aide">
                             </div>
-                            <h2 class="font-title text-white">Bsoin d'aide ?</h2>
+                            <h2 class="font-title text-white">Besoin d'aide ?</h2>
                         </div>
 
 
@@ -110,8 +109,8 @@
                     ?>
                 </div>
 
-                <section aria-label="Espace addministrateir" class="w-full h-auto linear-black-green p-4 flex flex-col gap-4 items-center justify-center md:w-1/2 ">
-                    <h2 class="font-title text-white">Zspace <span class="green-text">administrateur</span></h2>
+                <section aria-label="Espace addministrateir" class="w-full h-auto linear-black-green p-4 flex flex-col gap-4 items-center justify-center sm:w-[70%] ">
+                    <h2 class="font-title text-white">Espace <span class="green-text">administrateur</span></h2>
 
                     <?php
                     $btnId = "admin-btn";

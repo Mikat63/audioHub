@@ -729,6 +729,11 @@
       width: 70%;
     }
   }
+  .md\:w-\[70M\] {
+    @media (width >= 48rem) {
+      width: 70M;
+    }
+  }
   .lg\:w-\[30\%\] {
     @media (width >= 64rem) {
       width: 30%;
