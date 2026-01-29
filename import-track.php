@@ -10,6 +10,7 @@
 
     <script defer src="assets/script/main.js"></script>
     <script defer src="assets/script/pagination-library.js"></script>
+    <script defer src="assets/script/import.js"></script>
     <title>AudioHub - Import track</title>
     </head>
 
@@ -28,7 +29,7 @@
                     <p class="font-main text-white">Partage votre musique avec la communauté AudioHub</p>
                 </div>
 
-                <form id="import-form" action="" class="flex flex-col items-center justify-center gap-4 footer-grey-bg green-border rounded-lg w-full h-auto p-4">
+                <form id="import-form" action="" class="flex flex-col items-center justify-center gap-4 footer-grey-bg green-border rounded-lg w-full h-auto p-4" enctype="multipart/form-data">
                     <!-- music upload  -->
 
                     <div class="w-full flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -44,8 +45,9 @@
                                 <div class="w-5 h-5">
                                     <img src="assets/icons/import-white-icon.svg" alt="icone d'image w-full h-full">
                                 </div>
-                                <p class="font-main text-white">imprte un fichier audio</p>
-                                <p class="font-main-small text-white text-center opacity-50">mp3,flac,wav (max 50MB)</p>
+                                <p id="name-upload-music" aria-label="importation de la track réussi" class="font-main text-white hidden"></p>
+                                <p id="import-music-text" class="font-main text-white">importe un fichier audio</p>
+                                <p id="format-music-text" class="font-main-small text-white text-center opacity-50">mp3,flac,wav (max 50MB)</p>
                                 <input id="input-music" name="input-music" type="file" class="hidden" required>
                             </div>
                         </label>
@@ -54,19 +56,21 @@
 
                         <!-- image upload -->
                         <label class=" w-auto font-main text-white flex flex-col items-center justify-center gap-4" for="input-image" enctype="multipart/form-data">
-                            <div class="w-full h-auto flex flex-row justify-center gap-2">
+                            <div id="label-container" class="w-full h-auto flex flex-row justify-center gap-2">
                                 <div class="w-6 h-6">
                                     <img src="assets/icons/image-icon.svg" alt="icone d'image" class="w-full h-full">
                                 </div>
                                 Fichier Audio <span class="red-color">*</span>
                             </div>
+                            <img id="image-upload" aria-label="importation de la pochette réussi" class="hidden w-50 h-50" src="" alt="cover importé">
 
-                            <div class="flex flex-col items-center justify-center gap-2 p-4 rounded-lg green-border cursor-pointer">
+                            <div id="input-container" class="flex flex-col items-center justify-center gap-2 p-4 rounded-lg green-border cursor-pointer">
                                 <div class="w-5 h-5">
-                                    <img src="assets/icons/import-white-icon.svg" alt="icone d'image">
+                                    <img id="image-icon" src="assets/icons/import-white-icon.svg" alt="icone d'image">
                                 </div>
-                                <p class="font-main text-white">imprte une cover/p>
-                                <p class="font-main-small text-white text-center opacity-50">jpeg,png,webp (recommandé 600x600)</p>
+                                <p id="import-cover-text" class="font-main text-white">importe une cover
+                                <p>
+                                <p id="format-cover-text" class="font-main-small text-white text-center opacity-50">jpeg,png,webp (recommandé 600x600)</p>
                                 <input id="input-image" name="input-image" type="file" class="hidden" required>
                             </div>
                         </label>

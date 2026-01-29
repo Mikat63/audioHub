@@ -326,6 +326,9 @@
   .w-50 {
     width: calc(var(--spacing) * 50);
   }
+  .w-200 {
+    width: calc(var(--spacing) * 200);
+  }
   .w-\[20\%\] {
     width: 20%;
   }
@@ -343,6 +346,12 @@
   }
   .w-\[90\] {
     width: 90;
+  }
+  .w-\[200\] {
+    width: 200;
+  }
+  .w-\[200px\] {
+    width: 200px;
   }
   .w-auto {
     width: auto;
