@@ -47,7 +47,7 @@
                                 </div>
                                 <p id="name-upload-music" aria-label="importation de la track réussi" class="font-main text-white hidden"></p>
                                 <p id="import-music-text" class="font-main text-white">importe un fichier audio</p>
-                                <p id="format-music-text" class="font-main-small text-white text-center opacity-50">mp3,flac,wav (max 50MB)</p>
+                                <p id="format-music-text" class="font-main-small text-white text-center opacity-50">mp3,flac,wav (max 50Mo)</p>
                                 <input id="input-music" name="input-music" type="file" class="hidden" required>
                             </div>
                         </label>
@@ -70,7 +70,7 @@
                                 </div>
                                 <p id="import-cover-text" class="font-main text-white">importe une cover
                                 <p>
-                                <p id="format-cover-text" class="font-main-small text-white text-center opacity-50">jpeg,png,webp (recommandé 600x600)</p>
+                                <p id="format-cover-text" class="font-main-small text-white text-center opacity-50">jpeg,png,webp (max 5Mo recommandé 600x600)</p>
                                 <input id="input-image" name="input-image" type="file" class="hidden" required>
                             </div>
                         </label>
@@ -119,6 +119,7 @@
             </div>
 
             <?php require_once "partials/sidebar.php"; ?>
+            <?php require_once "partials/response-modal.php"; ?>
         </main>
 
         <footer class="fixed bottom-0 w-full h-auto footer-grey-bg flex flex-col items-center">

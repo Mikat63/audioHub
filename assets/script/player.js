@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // show track informations and play automatically
   function showPlayerInfos(track) {
+    console.log(track.dataset.cover);
+    console.log(playerTrackImg);
+
     const allTracks = document.querySelectorAll(".track");
     const trackId = track.dataset.id;
     allTracks.forEach((t, index) => {
@@ -23,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     playerTrackImg.src = track.dataset.cover;
+    console.log(playerTrackImg);
+
     playerTrackTitle.textContent = track.dataset.title;
     playerTrackArtist.textContent = track.dataset.artist;
     playerTrackAudio.src = track.dataset.audiosrc;
@@ -93,6 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tracksContainer = document.querySelector(".tracks-container");
   if (tracksContainer) {
+    console.log(playerTrackImg);
+
     tracksContainer.addEventListener("click", (event) => {
       const track = event.target.closest(".track");
       if (track) {
