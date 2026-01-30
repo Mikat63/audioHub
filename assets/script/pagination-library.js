@@ -60,11 +60,7 @@ function showTracks(response) {
       track.audioSrc,
     );
   });
-  document.querySelectorAll(".track").forEach((trackDiv) => {
-    trackDiv.addEventListener("click", function () {
-      window.playTrack(this.dataset);
-    });
-  });
+  // plus besoin d'écouteur ici, tout est géré dans player.js
 }
 
 paginationLinks.forEach((paginationLink) => {

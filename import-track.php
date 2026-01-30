@@ -81,14 +81,14 @@
                         <div class="flex flex-col gap-4 sm:flex-row">
                             <div class="font-main flex flex-col sm:flex-row sm:justify-between gap-2 lg:[50%]">
                                 <label class=" text-white text-[16px]" for="title">Titre <span class="red-color">*</span></label>
-                                <input class="font-main text-white footer-grey-bg green-border focus:scale-110 rounded-lg px-2" type="text" id="title" name="title" minlength="1" maxlength="50" placeholder="Entre le titre" required autocomplete="title">
+                                <input class="font-main text-white footer-grey-bg green-border focus:scale-110 rounded-lg px-2" type="text" id="title" name="title" minlength="3" maxlength="50" placeholder="Entre le titre" required autocomplete="title">
                             </div>
                             <p id="title-error" class='red-color font-main'></p>
 
 
                             <div class="font-main flex flex-col sm:flex-row sm:justify-between gap-2 lg:[50%]">
                                 <label class=" text-white text-[16px]" for="artist">Artiste <span class="red-color">*</span></label>
-                                <input class="font-main text-white footer-grey-bg green-border focus:scale-110 rounded-lg px-2" type="text" id="artist" name="artist" minlength="2" maxlength="50" placeholder="Entre l'artiste" required autocomplete="artist">
+                                <input class="font-main text-white footer-grey-bg green-border focus:scale-110 rounded-lg px-2" type="text" id="artist" name="artist" minlength="3" maxlength="35" placeholder="Entre l'artiste" required autocomplete="artist">
                             </div>
                             <p id="artist-error" class='red-color font-main'></p>
                         </div>
@@ -96,13 +96,13 @@
                         <div class="flex flex-col gap-4 sm:flex-row">
                             <div class="font-main flex flex-col sm:flex-row sm:justify-between gap-2 lg:[50%]">
                                 <label class=" text-white text-[16px]" for="album">Album</label>
-                                <input class="font-main text-white footer-grey-bg green-border focus:scale-110 rounded-lg px-2" type="text" id="album" name="album" minlength="2" maxlength="50" placeholder="Entre l'album" autocomplete="album">
+                                <input class="font-main text-white footer-grey-bg green-border focus:scale-110 rounded-lg px-2" type="text" id="album" name="album" minlength="2" maxlength="35" placeholder="Entre l'album" autocomplete="album">
                             </div>
                             <p id="album-error" class='red-color font-main'></p>
 
                             <div class="font-main flex flex-col sm:flex-row sm:justify-between gap-2 lg:[50%]">
                                 <label class=" text-white text-[16px]" for="genre">Genre <span class="red-color">*</span> </label>
-                                <input class="font-main text-white footer-grey-bg green-border focus:scale-110 rounded-lg px-2" type="text" id="genre" name="genre" minlength="2" maxlength="50" placeholder="Entre le genre" required autocomplete="genre">
+                                <input class="font-main text-white footer-grey-bg green-border focus:scale-110 rounded-lg px-2" type="text" id="genre" name="genre" minlength="3" maxlength="35" placeholder="Entre le genre" required autocomplete="genre">
                             </div>
                             <p id="genre-error" class='red-color font-main'></p>
                         </div>
