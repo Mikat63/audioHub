@@ -60,7 +60,6 @@ function showTracks(response) {
       track.audioSrc,
     );
   });
-
   document.querySelectorAll(".track").forEach((trackDiv) => {
     trackDiv.addEventListener("click", function () {
       window.playTrack(this.dataset);
