@@ -91,7 +91,7 @@ function showResponseModal(imgSrc, imgAlt, message, addColorText) {
   responseText.textContent = message;
   setTimeout(() => {
     responseModal.classList.toggle("hidden");
-  }, 2000);
+  }, 3000);
 }
 
 function messages(data) {

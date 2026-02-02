@@ -1,4 +1,5 @@
 <?php
+session_start();
 header('Content-Type: application/json; charset=utf-8');
 
 error_log(print_r($_POST, true));
@@ -183,7 +184,7 @@ if (!in_array($imageMime, $allowedMimeimage)) {
 finfo_close($finfo);
 
 // move files
-$destinationMusic = 'assets/tracks/' . uniqid() . '_' . basename($musicName);
+$destinationMusic = '../assets/tracks/' . uniqid() . '_' . basename($musicName);
 if (!move_uploaded_file($musicTmp, $destinationMusic)) {
     echo json_encode([
         'status' => 'error-move-music',
@@ -194,7 +195,7 @@ if (!move_uploaded_file($musicTmp, $destinationMusic)) {
 
 
 
-$destinationImg = 'assets/covers/' . uniqid() . '_' . basename($imageName);
+$destinationImg = '../assets/covers/' . uniqid() . '_' . basename($imageName);
 if (!move_uploaded_file($imageTmp, $destinationImg)) {
     echo json_encode([
         'status' => 'error-move-image',
@@ -204,3 +205,168 @@ if (!move_uploaded_file($imageTmp, $destinationImg)) {
 }
 
 // add in bdd  
+try {
+    require_once "../utils/db_connect.php";
+
+    // verify genre or create it and $genre became the genre id
+    $request = $db->prepare('SELECT
+                                *
+                            FROM 
+                                genres
+                            WHERE
+                                LOWER(name) = :genre
+                            ');
+
+    $request->execute([
+        ':genre' => strtolower($genre)
+    ]);
+
+    $genreRequest = $request->fetch();
+
+    if ($genreRequest) {
+        $genre = $genreRequest['id'];
+    } else {
+        $request = $db->prepare('INSERT INTO 
+                                    genres(name)
+                                VALUES 
+                                    (:genre)
+                                ');
+        $request->execute([
+            ':genre' => $genre
+        ]);
+
+        $genre = $db->lastInsertId();
+    };
+
+    // verify artist or create it and $genre became the genre id
+    $request = $db->prepare('SELECT
+                                *
+                            FROM 
+                                artists
+                            WHERE
+                                LOWER(name) = :name
+                            ');
+
+    $request->execute([
+        ':name' => strtolower($artist)
+    ]);
+
+    $artistRequest = $request->fetch();
+
+    if ($artistRequest) {
+        $artist = $artistRequest['id'];
+    } else {
+        $request = $db->prepare('INSERT INTO 
+                                    artists(name)
+                                VALUES 
+                                    (:name)
+                                ');
+        $request->execute([
+            ':name' => $artist
+        ]);
+
+        $artist = $db->lastInsertId();
+    };
+
+    // verify album or create it and $genre became the genre id
+    $albumId = null;
+
+    if (isset($album)) {
+        $request = $db->prepare('SELECT
+                                *
+                            FROM 
+                                albums
+                            WHERE
+                                LOWER(title) = :title AND id_artist = :idArtist
+                            ');
+
+        $request->execute([
+            ':title' => strtolower($album),
+            ':idArtist' => $artist
+        ]);
+
+        $albumRequest = $request->fetch();
+
+        if ($albumRequest) {
+            $albumId = $albumRequest['id'];
+        } else {
+            $request = $db->prepare('INSERT INTO 
+                                    albums(title,id_artist)
+                                VALUES 
+                                    (:title, :idArtist)
+                                ');
+            $request->execute([
+                ':title' => $album,
+                ':idArtist' => $artist
+            ]);
+
+            $albumId = $db->lastInsertId();
+        }
+    };
+
+    // add track in bdd and return json success
+    $request = $db->prepare('SELECT
+                                *
+                            FROM
+                                tracks
+                            WHERE title = :title 
+                                AND artist_id = :artist_id 
+                            ');
+
+
+    $request->execute([
+        ':title' => $title,
+        ':artist_id' => $artist,
+
+    ]);
+
+    $searchTrack = $request->fetch();
+
+    if ($searchTrack) {
+        echo json_encode([
+            'status' => 'track-exist-yet',
+            'message' => "Cette track existe déjà"
+        ]);
+        exit();
+    }
+
+    $request = $db->prepare(
+        'INSERT INTO
+            tracks(title,artist_id,album_id,genre_id,img_path_small,id_user,created_at,track_path)
+         VALUES
+            (:title,:artist_id,:album_id,:genre_id,:img_path_small,:id_user,:created_at,:track_path)'
+    );
+    $request->execute([
+        ':title' => $title,
+        ':artist_id' => $artist,
+        ':album_id' => $albumId,
+        ':genre_id' => $genre,
+        ':img_path_small' => $destinationImg,
+        ':id_user' => $_SESSION['user_id'],
+        ':created_at' => (new DateTime())->format('Y-m-d H:i:s'),
+        ':track_path' => $destinationMusic
+    ]);
+
+
+    echo json_encode([
+        'status' => 'success',
+        'message' => "Importation de la track réussi !"
+    ]);
+    exit();
+} catch (PDOException $error) {
+
+    if (isset($destinationMusic) && file_exists($destinationMusic)) {
+        unlink($destinationMusic);
+    }
+
+    if (isset($destinationImg) && file_exists($destinationImg)) {
+        unlink($destinationImg);
+    }
+
+
+    echo json_encode([
+        'status' => 'error-server',
+        'message' => "Une erreur s'est produite"
+    ]);
+    exit();
+}
