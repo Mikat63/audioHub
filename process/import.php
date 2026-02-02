@@ -183,26 +183,6 @@ if (!in_array($imageMime, $allowedMimeimage)) {
 }
 finfo_close($finfo);
 
-// move files
-$destinationMusic = '../assets/tracks/' . uniqid() . '_' . basename($musicName);
-if (!move_uploaded_file($musicTmp, $destinationMusic)) {
-    echo json_encode([
-        'status' => 'error-move-music',
-        'message' => "Une erreur s'est produite"
-    ]);
-    exit();
-}
-
-
-
-$destinationImg = '../assets/covers/' . uniqid() . '_' . basename($imageName);
-if (!move_uploaded_file($imageTmp, $destinationImg)) {
-    echo json_encode([
-        'status' => 'error-move-image',
-        'message' => "Une erreur s'est produite"
-    ]);
-    exit();
-}
 
 // add in bdd  
 try {
@@ -326,6 +306,26 @@ try {
         echo json_encode([
             'status' => 'track-exist-yet',
             'message' => "Cette track existe déjà"
+        ]);
+        exit();
+    }
+    // move files
+    $destinationMusic = '../assets/tracks/' . uniqid() . '_' . basename($musicName);
+    if (!move_uploaded_file($musicTmp, $destinationMusic)) {
+        echo json_encode([
+            'status' => 'error-move-music',
+            'message' => "Une erreur s'est produite"
+        ]);
+        exit();
+    }
+
+
+
+    $destinationImg = '../assets/covers/' . uniqid() . '_' . basename($imageName);
+    if (!move_uploaded_file($imageTmp, $destinationImg)) {
+        echo json_encode([
+            'status' => 'error-move-image',
+            'message' => "Une erreur s'est produite"
         ]);
         exit();
     }
