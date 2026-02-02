@@ -30,7 +30,7 @@ function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
      data-title="${title}" 
      data-artist="${artist}" 
      data-audiosrc="${audioSrc}" 
-     tabindex="0" class="track flex flex-row items-center gap-6 w-full sm:w-[80%] md:w-[70%] xl:w-[60%] hover:scale-105 focus:scale-105">
+    tabindex="0" class="track flex flex-row items-center gap-6 w-full sm:w-1/2 md:w-1/3 xl:w-1/4 hover:scale-105 focus:scale-105">
       <!-- cover tracks -->
       <div class="w-12 h-12 shrink-0">
         <img src="${safeCover}" alt="Pochette de l'album de ${album}" loading="lazy">
@@ -47,8 +47,12 @@ function trackCard(idTrack, coverSrc, album, title, artist, audioSrc) {
     </div>
     `;
 }
+
 function showTracks(response) {
   tracksContainer.innerHTML = "";
+  // Réapplique les classes responsives du container (pour library.php)
+  tracksContainer.className =
+    "tracks-container w-full flex flex-col items-center justify-center gap-2 py-4 sm:flex-row sm:flex-wrap";
   response.tracks.forEach((track) => {
     tracksContainer.innerHTML += trackCard(
       track.idTrack,
@@ -59,6 +63,7 @@ function showTracks(response) {
       track.audioSrc,
     );
   });
+  // plus besoin d'écouteur ici, tout est géré dans player.js
 }
 
 paginationLinks.forEach((paginationLink) => {

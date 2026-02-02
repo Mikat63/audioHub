@@ -6,7 +6,7 @@
     </div>
 
     <!-- title and artist infos -->
-    <div class="flex flex-col flex-1 min-w-0 gap-2 ">
+    <div class="flex flex-col flex-1 min-w-0 gap-1 ">
         <p aria-label="Titre" class="font-main text-white flex "><?= htmlspecialchars(strip_tags($title ?? '')) ?></p>
         <p aria-label="Artiste" class="font-main text-white flex "><?= htmlspecialchars(strip_tags($artist ?? '')) ?></p>
     </div>
