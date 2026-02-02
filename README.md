@@ -13,6 +13,7 @@ AudioHub est un projet musical communautaire. Il a pour but d'écouter de la mus
     - [Installation de WAMP](#installation-de-wamp)
     - [Base de données (SQL)](#base-de-données-sql)
 - [Architecture du projet](#architecture-du-projet)
+  - [Fonctionnalités principales](#fonctionnalités-principales)
   - [Fichiers principaux (pages)](#fichiers-principaux-pages)
     - [Dossiers et fichiers utilitaires](#dossiers-et-fichiers-utilitaires)
   - [Fichiers JavaScript](#fichiers-javascript)
@@ -85,6 +86,7 @@ Si vous souhaitez travailler sur le projet, veuillez installer :
 ### Base de données (SQL)
 
 - Le fichier **bdd_loaded.sql** contient l'architecture de la base de données à importer dans votre PHPMyAdmin.
+
 ---
 
 # Architecture du projet
@@ -92,15 +94,30 @@ Si vous souhaitez travailler sur le projet, veuillez installer :
 Le projet est organisé en dossiers pour une meilleure gestion.  
 Chaque dossier ou fichier a un rôle précis :
 
-/assets  
- /covers  
- /fonts  
- /icons  
- /img  
- /script  
-/partials  
-/process  
-/utils
+audiohub/
+├── assets/
+│ ├── covers/
+│ ├── fonts/
+│ ├── icons/
+│ ├── img/
+│ └── script/
+├── partials/
+├── process/
+├── utils/
+├── \*.php
+└── README.md
+
+---
+
+## Fonctionnalités principales
+
+- Import de tracks
+- Player audio
+- Bibliothèque utilisateur
+- Explorer global
+- Playlists
+- Recherche dynamique
+- Compteur d’écoute
 
 ---
 
