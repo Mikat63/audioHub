@@ -45,26 +45,13 @@ Si vous souhaitez travailler sur le projet, veuillez installer :
 
 ### Installation de Tailwind CSS
 
-1. Ouvrez un terminal à la racine du projet.
-2. Initialisez un projet npm si ce n'est pas déjà fait :
+1. Ouvrez un terminal à la racine du projet après l'avoir cloné avec Git et réinstaller les dépendances avec :
+
    ```bash
-   npm init -y
+   npm install
    ```
-3. Installez Tailwind CSS via npm :
-   ```bash
-   npm install -D tailwindcss
-   ```
-4. Générez le fichier de configuration Tailwind :
-   ```bash
-   npx tailwindcss init
-   ```
-5. Configurez votre fichier CSS principal pour inclure Tailwind (exemple dans `custom.css` ou `style.css`) :
-   ```css
-   @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
-   ```
-6. Lancez Tailwind en mode watch pour générer le CSS :
+
+2. Lancez Tailwind en mode watch pour générer le CSS :
    ```bash
    npx tailwindcss -i ./custom.css -o ./style.css --watch
    ```

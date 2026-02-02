@@ -2,9 +2,6 @@
 session_start();
 header('Content-Type: application/json; charset=utf-8');
 
-error_log(print_r($_POST, true));
-error_log(print_r($_FILES, true));
-
 // method verification
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode([
@@ -309,6 +306,7 @@ try {
         ]);
         exit();
     }
+
     // move files
     $destinationMusic = '../assets/tracks/' . uniqid() . '_' . basename($musicName);
     if (!move_uploaded_file($musicTmp, $destinationMusic)) {
