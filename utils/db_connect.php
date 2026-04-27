@@ -2,8 +2,8 @@
 
 $dsn = "mysql:host=localhost;dbname=audioHub";
 
-$user = "mickael_tores";
+$user = "root";
 
-$password = "18MickaelJulie092021...";
+$password = "";
 
 $db = new PDO($dsn, $user, $password);
