@@ -310,6 +310,7 @@ try {
         exit();
     }
     
+    
     // move files
     $destinationMusic = '../assets/tracks/' . uniqid() . '_' . basename($musicName);
     if (!move_uploaded_file($musicTmp, $destinationMusic)) {
